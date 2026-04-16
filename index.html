@@ -346,17 +346,25 @@ body.dark .title-panel {
 
 <!-- MENU -->
 <div class="nav">
-    <a href="#o-mnie">O mnie</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="#wydany">Tomik</a>
-<a href="#translations-en">Tłumaczenie tomiku na angielski</a>
-<a href="#translations-es">Tłumaczenie tomiku na hiszpański</a>
- <a href="#niewydane">Niewydane</a>
-   <a href="#rozproszone">Wiersze rozproszone</a>
-   <a href="#opowiadania">Opowiadania</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#ksiazki">Ulubione książki</a>
-    </div>
+  <a href="#o-mnie">O mnie</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#wydany">Tomik</a>
+
+  <a href="#translations-en">Tłumaczenie tomiku na angielski</a>
+  <a href="#translations-es">Tłumaczenie tomiku na hiszpański</a>
+
+  <a href="#niewydane">Niewydane</a>
+
+  <!-- 🔽 TU DODAJ TO -->
+  <a href="#tomik-1">Tomik 1</a>
+  <a href="#tomik-2">Tomik 2</a>
+  <a href="#tomik-3">Tomik 3</a>
+
+  <a href="#rozproszone">Wiersze rozproszone</a>
+  <a href="#opowiadania">Opowiadania</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#ksiazki">Ulubione książki</a>
+</div>
 
 
 <button onclick="toggleTheme()">🌙 / ☀️</button>
@@ -1742,16 +1750,23 @@ al valor<br>
 
 </div>
 <!-- NIEWYDANE -->
-<div class="section" id="niewydane">
+
+  <title>Niewydane tomiki</title>
+</head>
+<body>
+
+<section id="niewydane">
+
 <h2>Niewydane tomiki</h2>
-</div>
- <h3>ZE STADIONÓW ŚWIATA</h3>
-<ul>
 
-<div class="poem" style="text-align: center;">
+<section id="tomik-1" class="tomik">
+<div class="tomik">
+<h3 class="tomik-title">ZE STADIONÓW ŚWIATA</h3>
 
-<h3> BIEGACZ</h3>
-<p>dokąd wyskakuję jako biegacz z wazy
+<article class="poem-container">
+<h3 class="poem-title">BIEGACZ</h3>
+<pre class="poem">
+dokąd wyskakuję jako biegacz z wazy
 
 maraton jest małą archeologiczną wioską
 żadnej bitwy ni drogowskazu
@@ -1761,16 +1776,18 @@ nie potrzebny władcy ani nikomu więcej
 zwłaszcza że waza przechowywana w muzeum
 a ja
 mam powidoki uruchomione
-przez zwykłą kolej wyobrazni
+przez zwykłą kolej wyobraźni
 
 nawet tu
 na kartoflisku
-przy łagodnym strumieniu dymu</p>
-</div>
+przy łagodnym strumieniu dymu
+</pre>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">MINUTA ZEROWA MECZU</h3>
-<pre class="poem">hymn narodowy
+<pre class="poem">
+hymn narodowy
 zerowa minuta meczu piłkarskiego
 
 wymiana proporczyków
@@ -1784,16 +1801,18 @@ za chwilę minie
 kilkanaście sekund wiersza - komentarza
 
 wynik spotkania nie zmienił się na
-gwizdek sędziego i dyskusje obu trenerów  
+gwizdek sędziego i dyskusje obu trenerów
 
-sponsor zamknął oczy na rzut wolny 
+sponsor zamknął oczy na rzut wolny
 
-ulga</pre>
-</div>
+ulga
+</pre>
+</article>
 
-<div class="poem-container">
-<h3 class="poem-title"> W GŁĘBINIE</h3>
-<pre class="poem">na palcu
+<article class="poem-container">
+<h3 class="poem-title">W GŁĘBINIE</h3>
+<pre class="poem">
+na palcu
 zakręciła się obrączka
 
 włączyłem telewizor
@@ -1807,293 +1826,88 @@ wokół małego palca
 tylko dwa razy
 niech to będzie 
 program obowiązkowy
- 
+
 telewizor
-  na wszelki wypadek zasłoniłem 
-niepamięcią retransmisji 
+na wszelki wypadek zasłoniłem 
+niepamięcią retransmisji
 
 nie lubię porównań
-między niepełnosprawnością a mistrzynią świata </pre>
-</div>
+między niepełnosprawnością a mistrzynią świata
+</pre>
+</article>
 
-<div class="poem-container">
-<h3 class="poem-title"> DWIE ŁUCZNICZKI</h3>
-<pre class="poem">Szpilka rwie tunel lokówki
+<article class="poem-container">
+<h3 class="poem-title">DWIE ŁUCZNICZKI</h3>
+<pre class="poem">
+Szpilka rwie tunel lokówki
 Strzała mknie ku tarczy
-Dwie łuczniczki</p>
-</div>
+Dwie łuczniczki
+</pre>
+</article>
 
-<div class="poem-container">
-<h3 class="poem-title"> PROWOKACJA</h3>
-<pre class="poem">piąta rano w Warszawie
+<article class="poem-container">
+<h3 class="poem-title">PROWOKACJA</h3>
+<pre class="poem">
+piąta rano w Warszawie
 klaszczemy liniami papilarnymi 
 nie budzimy sąsiadów
-  (aczkolwiek szczekanie psa Mopsa
+(aczkolwiek szczekanie psa Mopsa
 powinniśmy zignorować)
 
-i jednocześnie  tworzymy falę dźwięku
+i jednocześnie tworzymy falę dźwięku
 sprowokujemy tym zamieszaniem bramkę dla Tajwanu
+na 1:12
+</pre>
+</article>
 
-na 1:12 </pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> KOMBINEZON KOSMONAUTY</h3>
-<pre class="poem">rysy twarzy przecinają sieć połączeń wi-fi
- komórki rąk i nóg
-  zanurzasz w linii życia elektrokardiogramu
-  z tułowia zbierzesz 
-  lustrzane odbicie 
-  westchnień domysłów beknięć 
-  
-  nie dogoni cię nawet Usain Bolt 
-biegacz w kombinezonie kosmonauty
+<article class="poem-container">
+<h3 class="poem-title">KOMBINEZON KOSMONAUTY</h3>
+<pre class="poem">
+rysy twarzy przecinają sieć połączeń wi-fi
 komórki rąk i nóg
-  zanurzasz w linii życia elektrokardiogramu
-  z tułowia zbierzesz 
-  lustrzane odbicie 
-  westchnień domysłów beknięć 
-  
-  nie dogoni cię nawet Usain Bolt 
-biegacz w kombinezonie kosmonauty</div>
+zanurzasz w linii życia elektrokardiogramu
+z tułowia zbierzesz 
+lustrzane odbicie 
+westchnień domysłów beknięć 
 
-<div class="poem-container">
+nie dogoni cię nawet Usain Bolt 
+biegacz w kombinezonie kosmonauty
+</pre>
+</article>
+
+<article class="poem-container">
 <h3 class="poem-title">TRENING</h3>
-<pre class="poem">muskuły zwinęły się w kłębek odpoczynku 
+<pre class="poem">
+muskuły zwinęły się w kłębek odpoczynku 
 przez dwie godziny były drapieżne 
 pazurem wyspanego lwa 
 teraz 
-ledwo dźwigają puch oddechów </pre>
-</div>
+ledwo dźwigają puch oddechów
+</pre>
+</article>
 
-<div class="poem-container">
-<h3 class="poem-title"> PODANIE</h3>
-<pre class="poem">suknie kobiet, białe koszule i wspaniałe krawaty mężczyzn widać 
- w kawiarniach i na stadionie
+<article class="poem-container">
+<h3 class="poem-title">PODANIE</h3>
+<pre class="poem">
+suknie kobiet, białe koszule i wspaniałe krawaty mężczyzn widać 
+w kawiarniach i na stadionie
 
-a jednak na płytę boiska wyskakuje trener w dresie, dziurawym czy
-wypożyczonym od kiepskiego handlowca
+a jednak na płytę boiska wyskakuje trener w dresie
 
 szczęsne pobrzękiwanie niestrzelonej bramki w głosie komentatora:
 Jezus Maria
 
-tuż przed zbiciem szkiełka w zegarku
-i nieoczekiwanie przeciągniętym gwizdkiem turka – sędziego
+sponsorem meczu powinna zostać tak zwana laga
+</pre>
+</article>
 
----------
-
-sponsorem meczu Widzew – Broendby 
-powinna zostać tak zwana laga
-to jest długie podanie wzdłuż linii autowej 
-między Markiem Citko a Robertem Lewandowskim </pre>
 </div>
 
-<div class="poem-container">
-<h3 class="poem-title">KURSYWĄ ZAPISANE</h3>
-<pre class="poem">oczy zamroczone pod siłą wulkanów ciosów w narożniku ringu 
-woda bulgocze w przebudzonym czajniku 
+<!-- TOMIK 2 -->
+ <section id="tomik-2" class="tomik">
+<h3 class="tomik-title">DZIEŃ DOBRY, DO WIDZENIA I SPACERY MIĘDZY</h3>
 
-herbata smakuje brakiem
-Andrzej Gołota wstaje białoczerwono a jednak ociężale
-budzik zdrętwiał po pięćdziesięciu sekundach
-
-Brewster sealed the career of Andrzej Gołota with a kiss folded butterfly wings
-
-skrzydełka motyla Brewstera
-zakryły pocałunkami karierę Andrzeja Gołoty</p>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> CIĘCIWA</h3>
-<pre class="poem">Wyścig Paryż - Nicea 
- Kolarze
-jadą w ruchomym prostokącie
-
-Sto metrów przed metą cięciwa ręki rozerwała przedni bok
-figury geometrycznej 
-
-Przełomowa chwila  zwycięzcy </pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> DO POŁOWY PUSTA</h3>
-<pre class="poem">na brzegu szklanki tańczy łyżwiarka 
-figurowa
-szklanka do połowy jednak pusta
-muzyka płynie z kanału youtube
-brawa puszczone z playbacku </pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title">NIEPOKOJĄCO</h3>
-<pre class="poem">nie przejdę się po płycie stadionu olimpijskiego 
-w Berlinie Jesse Owens płonął wtedy rekordami
-powietrze krzyczało brunatnym echem 
-chce mi się płakać i śmiać jednocześnie 
-nie usłyszę echa ryku "Heil Hitler"
-i nawet cień wodza nie zobaczy spastycznego ciała 
-nie uwierzyłby że można aż tak niepokojąco iść
- tak krzywo jednocześnie ostro
-
-a jednak od czasu do czasu potrafię dojść do celu przeciąć 
-taśmę mety bólem niepełnosprawności</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title">KRÓLOWA SPORTU</h3>
-<pre class="poem">i jak gdyby nigdy nic witamy państwa ze stadionów świata
-komentują dla państwa 
-Włodzimierz Szaranowicz i Adam Miks
-
-tak na przykład mamy na ekranie Ewę Swobodę
- jednak nie pokona czasu w czasie poniżej siedmiu sekund
-
-ale już pojawia się Władysław Kozakiewicz
-  białoczerwona tyczka spaliła się 30 lipca 1980 roku
-chociaż pan Włodek  jak się zdaje nie został sportowym Konradem Wallenrodem
-
-nie przestajemy opowiadać historii lekkiej atletyki
-bo oto chłopski sarmata dokonuje ostatniego okrążenia w Palmirach 
-Janusz Kusociński rozstrzelany złotym medalem olimpijskim Berlin 
-
-ażeby zmienić nieco klimat przenieśmy się 
-do pierwszej połowy dwudziestego pierwszego wieku
-
-   to jest Anita Włodarczyk w koszu na śmieci
- a to w koszyczku wielkanocnym 
- czy te dwa ujęcia również należą do kanonu królowej sportu 
-   odpowiedz znajdziemy w kole startowym 
-
-
-   i jak gdyby nic się nie stało nagle po diable
-   żegnamy drogich widzów sportowych aren
-   Adam Miks i Włodzimierz Szaranowicz</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> SOCIAL MEDIA</h3>
-<pre class="poem">Napastnik gości dośrodkował piłkę priorytetowym emailem 
-
-Obrońca naszych przejął przesyłkę uniwersalnym programem antydopingowym
-
-Cyberpunkowy sędzia
-podłączony do interfejsu graficznego podyktował rzut wolny
-
-Decyzję przekazał przez social media
-
-Kibice w programie graficznym ułożyli poster
-JESTEŚMY MISTRZAMI ŚWIATA
-
-Na ostatni gwizdek sędziego najwierniejsi sympatycy meczu uśpią 
-
-komputer</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> ORGAZM ŻYCIA</h3>
-<pre class="poem">Z warkocza zbudowałem skocznię narciarską
-Pierwszym zawodnikiem dłoń wskazująca
-
-Technika lotu
-nie będzie brana pod uwagę Iluż przedskoczków
-marnuje talent przez niezdecydowanie
-Podróż będzie kąśliwa a jednak niezbyt długa A jednak
-bolą mnie powieki
-jakbym chciał za dużo zobaczyć jakby do oczu wlatywał mi tunel skoczni
-orgazm życia</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title">WYLICZANKA</h3>
-<p class="poem"><pre class="poem">
-gem Iga
-set Świątek
-mecz Pink Floyd
-
-Crown</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title">WSPOMNIENIE/WYPOMNIENIE</h3>
-<pre class="poem">brawa pasażerów
-samolot odprężył się 
-wieża kontrolna rozdaje
-bilety last minute
-na mecz zamknięcia 
-
-beneficjentami zostaną ci najbardziej odważni i niepospolici
-
-zbudujemy stadiony EURO’12</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> TURNIEJ MIESZKANIA NUMER 369</h3>
-<pre class="poem">między brzegiem talerza a taflą lodu 
-usiedli białoczerwoni miniaturowi hokeiści
-
-zastanawiają się
-
-czemu żadna drużyna nie zgłosiła się do
-Turnieju Mieszkania Numer 369
-
-po dłuższej naradzie uchwalono konkluzję
-
-nagroda nazbyt covidowa 
-budyń waniliowy</p>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title">BANANY</h3>
-<pre class="poem">coraz lżejsi
-asceci wegetarianie
-podobni słomkom
-banany rozpięte na linii startu 
-latawce z wydłużonymi szyjami 
-styczni z perełkami dmuchanego ryżu</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> ANDRZEJ JUSKOWIAK, 22 LISTOPADA 2022</h3>
-<pre class="poem">Robert Lewandowski szukał gola na polu karnym Meksyku
-
-To była ciężka praca
-podobna do
-odnajdywania rozrzuconych złotówek
- na piasku pustyni Kataru
-
-„Temu piłkarzowi 
-nie należała się bramka”
-
-grzmi 
-werdykt komentatorski 
-Andrzeja Juskowiaka</pre>
-</div>
-
-<div class="poem-container">
-<h3 class="poem-title"> ZASTĘPSTWO</h3>
-<pre class="poem">„Przy bliższym słupku tuptają zawodnicy jednej i drugiej drużyny” 
-Tak opowiada Mateusz Borek o meczu Polska – Meksyk 
-na Mistrzostwach Świata w Katarze 
-
-Nieuczonemu 
-w zasadach gry w piłkę nożną
-jawi się
-przystanek autobusowy na przedmieściu
-w godzinach szczytu  porą zimową
-
-Autobus człapiący po gruncie i grudzie
-w miejsce dolatującej piłki
-w zastępstwie wyniku 1:0 dla Roberta Lewandowskiego
-pasażer w gumiakach zaplątany w sieci dróg powiatowych</pre>
-</div>
-
-<div class="section" id="niewydane">
-<h2>Niewydane tomiki</h2>
-</div>
- <h3>DZIEŃ DOBRY, DO WIDZENIA I SPACERY MIĘDZY</h3>
-<ul>
-
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">NASTOLATEK</h3>
 <pre class="poem">
 taki teatr
@@ -2104,9 +1918,9 @@ a tak naprawdę
 otrzymałeś rolę 
 nastolatka bez suflera
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">MATURA</h3>
 <pre class="poem">
 osiemnastoletnia dziewczyna
@@ -2120,9 +1934,9 @@ postaci Walta Disneya
 
 całuje o rok starszego kolegę
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PRZYSZŁOŚĆ</h3>
 <pre class="poem">
 przyszłość 
@@ -2137,9 +1951,9 @@ jakże piękne są myśli
 delikatnie drży podłoga
 płaszczyzna przetrwania
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PORANEK</h3>
 <pre class="poem">
 drzewo mało 
@@ -2155,9 +1969,9 @@ dalsze i bliższe parantele
 jednak poranek rozprzestrzenia się
 ma moc 
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">KURZ</h3>
 <pre class="poem">
 zaświeć zapomnieniem i wspomnieniem
@@ -2171,9 +1985,9 @@ prześlizgniesz się przez tunel tęsknoty
 
 gdzie jestem
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">ŚWIATŁO</h3>
 <pre class="poem">
 ktoś z okna rozsypał światło
@@ -2199,9 +2013,9 @@ ktoś z okna rozsypał pobłysk życia
 z tęczy i rąk zbudujmy nową
 kładkę
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PRZEZ CHWILĘ</h3>
 <pre class="poem">
 Nie przeżyliśmy jeszcze wszystkiego co może przeżyć człowiek
@@ -2217,9 +2031,9 @@ Upadek to nie ruina ni popiół
 Jesteśmy tylko przez chwilę w obszarze bezdechu ziemi
 Jesteśmy tylko przez chwilę niepełnosprawni
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">MŁODY POETA</h3>
 <pre class="poem">
 Bo widzi pani
@@ -2235,9 +2049,9 @@ maleńka rana kłuta
 Dlatego
 rzucam zaledwie cień porządku na papier
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">NEGACJA</h3>
 <pre class="poem">
 Nie popełnię samobójstwa Życie nie zapętli się 
@@ -2249,9 +2063,9 @@ Nie widzę także znaku stop
 Jedynie co mogę to poprosić Pana Boga o rychłą śmierć
 Przeżyję autodestrukcję z błogosławieństwem
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PORÓD</h3>
 <pre class="poem">
 Jestem powietrzem
@@ -2260,9 +2074,9 @@ Oddalam się
 Multiplikujemy
 Widzisz mnie
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">WSKAZÓWKI</h3>
 <pre class="poem">
 Całuję cię od rana do południa
@@ -2280,9 +2094,9 @@ balansującymi na okręgach zajezdni
 Dopóki wskazówki zegara ściennego 
 nie zasłonią słońca i naszych ciał
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">METAFORA</h3>
 <pre class="poem">
 Jak to z metaforą bywa,
@@ -2290,9 +2104,9 @@ mężczyzna tłumaczy kobiecie życie między wierszami.
 Wieczorami odnajduje słowa niedokończonych obrazów.
 Kobieta dopisuje jednak wyobrażenie ciągu dalszego.
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">ZEZ</h3>
 <pre class="poem">
 Lewe oko ma swój punkt widzenia
@@ -2300,9 +2114,9 @@ Prawe jeszcze szuka krajobrazu
 Razem omawiają chwiejne umysły
 Skoki w bok ludzkości
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">KŁÓTNIA</h3>
 <pre class="poem">
 Ziołami ufarbowałaś włosy,
@@ -2312,9 +2126,9 @@ wypatruję Cię przez odwrotną lunetę szklanki.
 
 Kłótnia między nami zatem również milczy.
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">TYCH PARĘ BAJEK</h3>
 <pre class="poem">
 Przede wszystkim wiersz o jesieni,
@@ -2326,11 +2140,15 @@ okryj nogi wełnianym swetrem.
 Nie bój się – mgła pokryje wszelkie koszty,
 tych parę bajek.
 </pre>
+</article>
+
 </div>
 
-<h3>MŁODOŚĆ I INNE ODCIENIE ŻYCIA</h3>
+<!-- TOMIK 3 -->
+<section id="tomik-3" class="tomik">
+<h3 class="tomik-title">MŁODOŚĆ I INNE ODCIENIE ŻYCIA</h3>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">NASTOLATEK</h3>
 <pre class="poem">
 taki teatr
@@ -2341,9 +2159,9 @@ a tak naprawdę
 otrzymałeś rolę 
 nastolatka bez suflera
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">MATURA</h3>
 <pre class="poem">
 osiemnastoletnia dziewczyna
@@ -2357,9 +2175,9 @@ postaci Walta Disneya
 
 całuje o rok starszego kolegę
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PRZYSZŁOŚĆ</h3>
 <pre class="poem">
 przyszłość 
@@ -2374,9 +2192,9 @@ jakże piękne są myśli
 delikatnie drży podłoga
 płaszczyzna przetrwania
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PORANEK</h3>
 <pre class="poem">
 drzewo mało 
@@ -2392,9 +2210,9 @@ dalsze i bliższe parantele
 jednak poranek rozprzestrzenia się
 ma moc 
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">KURZ</h3>
 <pre class="poem">
 zaświeć zapomnieniem i wspomnieniem
@@ -2408,9 +2226,9 @@ prześlizgniesz się przez tunel tęsknoty
 
 gdzie jestem
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">ŚWIATŁO</h3>
 <pre class="poem">
 ktoś z okna rozsypał światło
@@ -2436,9 +2254,9 @@ ktoś z okna rozsypał pobłysk życia
 z tęczy i rąk zbudujmy nową
 kładkę
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PRZEZ CHWILĘ</h3>
 <pre class="poem">
 Nie przeżyliśmy jeszcze wszystkiego co może przeżyć człowiek
@@ -2446,8 +2264,7 @@ wychodzimy dopiero z bram odsuwając zdziwionych przechodniów
 zostawiając utuloną w spastycznych dłoniach poduszkę bezpieczeństwa
 Nie tylko ocaleni ale także wpisani w świat z fałszywym olśnieniem
 zdrowej części ciała zawierzywszy umiejętność chodzenia samym sobie
-Budowanie kroków bez aparatów wspomagających lecz z
-pasją weryfikującą natężenie mięśni
+Budowanie kroków bez aparatów wspomagających lecz z pasją weryfikującą natężenie mięśni
 Nie trzeba schodzić do piwnicy aby uchronić w czarnych dłoniach światło
 Gdy upadniemy a to jest wpisane w zbyt dużą samodzielność
 światło nie zaginie owoc nie zgnije
@@ -2455,9 +2272,9 @@ Upadek to nie ruina ni popiół
 Jesteśmy tylko przez chwilę w obszarze bezdechu ziemi
 Jesteśmy tylko przez chwilę niepełnosprawni
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">WYTŁUMACZĘ</h3>
 <pre class="poem">
 Poezja jest niepokojem
@@ -2481,9 +2298,9 @@ nikt nie wie dlaczego nawet poeta
 
 Tylko atrament drży bez słów
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">MŁODY POETA</h3>
 <pre class="poem">
 Bo widzi pani
@@ -2499,9 +2316,9 @@ maleńka rana kłuta
 Dlatego
 rzucam zaledwie cień porządku na papier
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">NEGACJA</h3>
 <pre class="poem">
 Nie popełnię samobójstw Życie nie zapętli się
@@ -2513,9 +2330,9 @@ Nie widzę także znaku stop
 Jedynie co mogę to poprosić Pana Boga o rychłą śmierć
 Przeżyję autodestrukcję z błogosławieństwem
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">PORÓD</h3>
 <pre class="poem">
 Jestem powietrzem
@@ -2524,9 +2341,9 @@ Oddalam się
 Multiplikujemy
 Widzisz mnie
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">WSKAZÓWKI</h3>
 <pre class="poem">
 Całuję cię od rana do południa
@@ -2544,9 +2361,9 @@ balansującymi na okręgach zajezdni
 Dopóki wskazówki zegara ściennego
 nie zasłonią słońca i naszych ciał
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">METAFORA</h3>
 <pre class="poem">
 Jak to z metaforą bywa,
@@ -2554,9 +2371,9 @@ mężczyzna tłumaczy kobiecie życie między wierszami.
 Wieczorami odnajduje słowa niedokończonych obrazów.
 Kobieta dopisuje jednak wyobrażenie ciągu dalszego.
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">ZEZ</h3>
 <pre class="poem">
 Lewe oko ma swój punkt widzenia
@@ -2564,9 +2381,9 @@ Prawe jeszcze szuka krajobrazu
 Razem omawiają chwiejne umysły
 Skoki w bok ludzkości
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">KŁÓTNIA</h3>
 <pre class="poem">
 Ziołami ufarbowałaś włosy,
@@ -2576,9 +2393,9 @@ wypatruję Cię przez odwrotną lunetę szklanki.
 
 Kłótnia między nami zatem również milczy.
 </pre>
-</div>
+</article>
 
-<div class="poem-container">
+<article class="poem-container">
 <h3 class="poem-title">TYCH PARĘ BAJEK</h3>
 <pre class="poem">
 Przede wszystkim wiersz o jesieni,
@@ -2590,10 +2407,11 @@ okryj nogi wełnianym swetrem.
 Nie bój się – mgła pokryje wszelkie koszty,
 tych parę bajek.
 </pre>
-</div>
+</article>
 
 </div>
 
+</section>
 
 
 <h1>OPOWIADANIA</h1>
@@ -3025,6 +2843,57 @@ ludzie.
 
 <section class="section" id="ksiazki">    <h2>Ulubione książki</h2>    <h3>Polskie</h3>   
  <article class="book">      <h4>"Lalka" – Bolesław Prus</h4>      <p><strong>Pierwodruk:</strong> "Kurier Codzienny", 1887–1889</p>      <p><strong>Pierwsze wydanie:</strong> 1890, „Gebethner i Wolff”</p>      <p><strong>Adaptacje filmowe:</strong></p>      <ul>        <li>1967 – film w reżyserii Wojciecha Jerzego Hasa, Wokulski: Mariusz Dmochowski, Izabela: Beata Tyszkiewicz</li>        <li>1978 – serial w reżyserii Ryszarda Bera, Wokulski: Jerzy Kamas, Izabela: Małgorzata Braunek</li>        <li>2025 – planowane ekranizacje:          <ul>            <li>Gigant Films (reż. Maciej Kawalski) – Wokulski: Marcin Dorociński, Izabela: Kamila Urzędowska</li>            <li>Netflix (reż. Paweł Maślona, Jan Kwieciński) – Wokulski: Tomasz Schuchardt, Izabela: Sandra Drzymalska</li>          </ul>        </li>      </ul>      <blockquote class="quote">        <p>          „– Józiu, przynieś no jeszcze piwa. A która to butelka?<br>          – Szósta, panie radco.<br>          – Już szósta?… Jak ten czas leci!”        </p>      </blockquote>    </article>  </section></body></html>
+<article class="book"> 
+<h4>"Chłopi" -  Władysław Stanisław Reymont</h4>
+
+<p><strong>Pierwodruk:</strong> "Kurier Codzienny", 1904–1909</p>
+
+<p><strong>Pierwsze wydanie:</strong> 1904, "Gebethner i Wolff"</p>
+
+<p><strong>Adaptacje filmowe: 
+<ul> 
+<li>1971 - film "Chłopi", w reżyserii Jana Rybkowskiego, Władysław Hańcza jako Boryna, Emilia Krakowska jako Jagna</li>
+<li>1972 - serial "Chłopi", również w reżyserii Jana Rybkowskiego</li>
+<li>film animowany "Chłopi" z 2023, w reżyserii DK Welchman i Hugh Welchmana </li>
+</ul>        </li>      </ul>      <blockquote class="quote">   <p>Niech będzie pochwalony Jezus Chrystus!</p> </blockquote>    </article>  </section></body></html>
+
+<article class="book">  
+
+<h4>"Nad Niemnem" - Eliza Orzeszkowa</h4>
+<p><strong>Pierwodruk:</strong>"Tygodnik Ilustrowany", 1887</p>
+<p><strong>Pierwsze wydanie: 1888</p>
+
+<p><strong>
+
+Adaptacje filmowe: 
+<ul>
+<li>1939 - film "Nad Niemnem" w reżyserii Wandy Jakubowskiej ze scenariuszem Jarosława Iwaszkiewicza, Elżbieta Barszczewska jako Justyna, 
+Jerzy Pichelski – Jan; film zaginął </li>
+
+<li>1987 -  film "Nad Niemnem" w reżyserii Zbigniewa Kuźmińskiego, Iwona Katarzyna Pawlak jako Justyna Orzelska, Adam Marjański jako Jan Bohatyrowicz</li>
+<li>serial "Nad Niemnem" z 1987, również w reżyserii Zbigniewa Kuźmińskiego, w tej samej obsadzie co film </li>
+</ul>        </li>      </ul>      <blockquote class="quote">   <p>
+Bo ziemia to skarb największy.</strong></p></blockquote>    </article>  </section></body></html>
+
+<article class="book">      <h4>
+"Trylogia" ("Ogniem i mieczem", "Potop", "Pan Wołodyjowski"), Henryk Sienkiewicz</h4>
+
+<p><strong>Pierwodruk: 1884–1888</p>
+
+<p><strong>Pierwsze wydania: 
+"Ogniem i mieczem" – 1884; /
+"Potop" – 1886/
+"Pan Wołodyjowski" – 1888</p>
+
+<p><strong>
+<ul> Adaptacje filmowe: 
+<li>1967 -  film "Ogniem i mieczem", w reżyserii Jerzego Hoffmana, Michał Żebrowski jako Skrzetuski, Izabella Scorupco jako Helena</li>
+<li> 1974 - film "Potop" , w reżyserii Jerzego Hoffmana, Daniel Olbrychski jako Kmicic</li>
+<li>1969 - film "Pan Wołodyjowski", w reżyserii Jerzego Hoffmana, Tadeusz Łomnicki jako Wołodyjowski</li>
+
+
+
+
 
 
 
