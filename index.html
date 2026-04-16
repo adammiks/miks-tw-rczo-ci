@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -6,24 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Miks twórczości Adama</title>
-
 <meta name="description" content="Strona Adama Miks – poezja, wiersze i galeria.">
 
-<!-- FAVICON (czysta wersja) -->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<!-- FONT (aktywny – faktycznie używany) -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-<style>
-html {
-    scroll-behavior: smooth;
-}
 
+<style>
 /* =========================
-   1. GLOBAL
+   BASE
 ========================= */
+
+:root{
+    --nav-height: 60px;
+    --bg-light: #f5f5f5;
+    --bg-dark: #121212;
+    --text-light: #000;
+    --text-dark: #e0e0e0;
+    --accent: #d2b48c;
+}
 
 html {
     scroll-behavior: smooth;
@@ -32,313 +34,250 @@ html {
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.8;
-    letter-spacing: 0.2px;
-    padding-top: 60px;
-    transition: background-color 0.3s, color 0.3s;
+    padding-top: var(--nav-height);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background 0.3s, color 0.3s;
 }
 
 /* =========================
-   2. TRYBY (LIGHT / DARK)
+   THEMES
 ========================= */
 
 body.light {
-    background: #f5f5f5;
-    color: #000;
+    background: var(--bg-light);
+    color: var(--text-light);
 }
 
 body.dark {
-    background: #121212;
-    color: #e0e0e0;
+    background: var(--bg-dark);
+    color: var(--text-dark);
 }
 
 /* =========================
-   3. NAWIGACJA
+   NAV
 ========================= */
 
 .nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #d2b48c;
-    padding: 12px;
-    text-align: center;
-    border-bottom: 3px double black;
-    z-index: 1000;
+    height: var(--nav-height);
+    background: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px double #000;
+    z-index: 1100;
 }
 
 body.dark .nav {
     background: #333;
-    border-color: #888;
+    border-color: #777;
 }
 
 .nav a {
-    margin: 0 10px;
     text-decoration: none;
-    color: inherit;
     font-weight: bold;
-}
-
-.nav a:hover {
-    text-decoration: underline;
-}
-
-body.dark .nav a {
-    color: #fff;
+    color: inherit;
 }
 
 .toggle-btn {
-    margin-left: 15px;
-    padding: 5px 10px;
     cursor: pointer;
+    padding: 5px 10px;
 }
 
 /* =========================
-   4. SEKCJE (USUNIĘTA RAMKA)
-========================= */
-
-.section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px 50px;
-    background: transparent;   /* brak białej ramki */
-    box-shadow: none;          /* brak cienia */
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.section p {
-    text-align: justify;
-}
-
-/* =========================
-   5. TYTUŁ STRONY
+   TITLE
 ========================= */
 
 .title-panel {
     max-width: 800px;
-    margin: 90px auto 20px;
+    margin: 90px auto 30px;
     padding: 25px;
     text-align: center;
-    background: #d2b48c;
-    border: 4px double black;
+    background: var(--accent);
+    border: 3px double #000;
 }
 
 body.dark .title-panel {
-    background: #444;
+    background: #2a2a2a;
     border-color: #aaa;
 }
 
-.title-panel .main-title {
+.title-panel h1 {
     font-size: 2.5em;
-    margin-bottom: 0.2em;
+    margin: 0;
 }
 
 .title-panel .motto {
-    font-size: 1.2em;
     font-style: italic;
-    color: #555;
+    opacity: 0.8;
 }
 
 /* =========================
-   6. WIERSZE
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   POEMS
 ========================= */
 
 .poem-container {
-    max-width: 680px;
+    max-width: 700px;
     margin: 60px auto;
-    padding: 10px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 10px 20px;
+    text-align: center;
 }
 
 .poem-title {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: 500;
-    letter-spacing: 2px;
     text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 .poem-container p {
     text-align: left;
     white-space: pre-line;
-    margin: 0;
-    font-variant-ligatures: common-ligatures;
 }
 
 /* =========================
-   7. AFTERWORD
+   2-COLUMN POEM
+========================= */
+
+.poem-pair {
+    max-width: 1000px;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.poem-pair::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: #ccc;
+}
+
+.poem-col p {
+    white-space: pre-line;
+}
+
+/* =========================
+   AFTERWORD / TEXT
 ========================= */
 
 .afterword {
     max-width: 700px;
     margin: 40px auto;
     text-align: justify;
-    line-height: 1.6;
-    font-size: 16px;
-}
-
-.afterword h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.afterword p {
-    margin-bottom: 1em;
 }
 
 /* =========================
-   8. RECENZJA
-========================= */
-
-.recenzja {
-    text-align: right;
-    max-width: 600px;
-    margin: 40px auto;
-    font-style: italic;
-}
-
-/* =========================
-   9. CYTAT
+   QUOTE
 ========================= */
 
 .quote {
-    margin-top: 20px;
+    margin: 20px auto;
     padding: 15px;
-    background: #f0f0f0;
     border-left: 4px solid #888;
     font-style: italic;
 }
 
 /* =========================
-   10. GALERIA
+   GALLERY
 ========================= */
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .gallery img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     object-fit: cover;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
 }
 
 /* =========================
-   11. MODAL
+   MODAL
 ========================= */
 
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.85);
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
 }
 
-.modal-content {
-    display: block;
-    margin: 5% auto;
-    max-width: 80%;
-    max-height: 80%;
+.modal img {
+    max-width: 85%;
+    max-height: 85%;
 }
 
 .close {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 25px;
     font-size: 40px;
     color: white;
     cursor: pointer;
 }
 
 /* =========================
-   WIERSZ + TŁUMACZENIE (2 KOLUMNY)
+   MOBILE
 ========================= */
 
-.poem-pair {
-    max-width: 1000px;
-    margin: 100px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-}
+@media (max-width: 768px) {
+    .poem-pair {
+        grid-template-columns: 1fr;
+    }
 
-/* kolumny */
-.poem-col {
-    max-width: 100%;
-}
+    .poem-pair::before {
+        display: none;
+    }
 
-/* tekst wiersza */
-.poem-col p {
-    white-space: pre-line;
-    text-align: left;
-}
+    .title-panel h1 {
+        font-size: 1.8em;
+    }
 
-/* tytuły */
-.poem-title {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* meta (tomik, tłumacz) */
-.meta {
-    margin-top: 20px;
-    font-size: 0.9em;
-    opacity: 0.7;
-}
-
-/* tłumaczenie – delikatnie inne */
-.translation {
-    opacity: 0.85;
-}
-
-/* pionowa linia między kolumnami */
-.poem-pair::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    width: 1px;
-    height: 100%;
-    background: #ccc;
-}
-
-/* potrzebne do linii */
-.poem-pair {
-    position: relative;
-}
-
-.recenzja {
-    max-width: 600px;
-    margin: 40px auto;
-    font-style: italic;
-}
-
-.text-block p {
-    text-align: justify;
-}
-
-/* podpis autora */
-.recenzja footer {
-    text-align: right;
-    margin-top: 10px;
-    font-style: normal;
+    .nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
 }
 </style>
 </head>
