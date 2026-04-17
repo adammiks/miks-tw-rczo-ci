@@ -341,6 +341,69 @@ body.dark .title-panel {
     margin-top: 10px;
     font-style: normal;
 }
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .section {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    .title-panel {
+        margin: 80px 10px 20px;
+        padding: 15px;
+    }
+
+    .poem-container {
+        padding: 10px 15px;
+    }
+
+    .poem-pair {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 60px 20px;
+    }
+
+    .poem-pair::before {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .nav a {
+        margin: 4px;
+        font-size: 11px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}    
+    
 </style>
 </head>
 
