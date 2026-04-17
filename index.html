@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -5,27 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Miks twórczości Adama</title>
+
 <meta name="description" content="Strona Adama Miks – poezja, wiersze i galeria.">
 
+<!-- FAVICON (czysta wersja) -->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+<!-- FONT (aktywny – faktycznie używany) -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   BASE
-========================= */
-
-:root{
-    --nav-height: 60px;
-    --bg-light: #f5f5f5;
-    --bg-dark: #121212;
-    --text-light: #000;
-    --text-dark: #e0e0e0;
-    --accent: #d2b48c;
+html {
+    scroll-behavior: smooth;
 }
+
+/* =========================
+   1. GLOBAL
+========================= */
 
 html {
     scroll-behavior: smooth;
@@ -34,250 +33,313 @@ html {
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.8;
-    padding-top: var(--nav-height);
+    letter-spacing: 0.2px;
+    padding-top: 60px;
+    transition: background-color 0.3s, color 0.3s;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    transition: background 0.3s, color 0.3s;
 }
 
 /* =========================
-   THEMES
+   2. TRYBY (LIGHT / DARK)
 ========================= */
 
 body.light {
-    background: var(--bg-light);
-    color: var(--text-light);
+    background: #f5f5f5;
+    color: #000;
 }
 
 body.dark {
-    background: var(--bg-dark);
-    color: var(--text-dark);
+    background: #121212;
+    color: #e0e0e0;
 }
 
 /* =========================
-   NAV
+   3. NAWIGACJA
 ========================= */
 
 .nav {
     position: fixed;
     top: 0;
     width: 100%;
-    height: var(--nav-height);
-    background: var(--accent);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    border-bottom: 2px double #000;
-    z-index: 1100;
+    background: #d2b48c;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 3px double black;
+    z-index: 1000;
 }
 
 body.dark .nav {
     background: #333;
-    border-color: #777;
+    border-color: #888;
 }
 
 .nav a {
+    margin: 0 10px;
     text-decoration: none;
-    font-weight: bold;
     color: inherit;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+body.dark .nav a {
+    color: #fff;
 }
 
 .toggle-btn {
-    cursor: pointer;
+    margin-left: 15px;
     padding: 5px 10px;
+    cursor: pointer;
 }
 
 /* =========================
-   TITLE
-========================= */
-
-.title-panel {
-    max-width: 800px;
-    margin: 90px auto 30px;
-    padding: 25px;
-    text-align: center;
-    background: var(--accent);
-    border: 3px double #000;
-}
-
-body.dark .title-panel {
-    background: #2a2a2a;
-    border-color: #aaa;
-}
-
-.title-panel h1 {
-    font-size: 2.5em;
-    margin: 0;
-}
-
-.title-panel .motto {
-    font-style: italic;
-    opacity: 0.8;
-}
-
-/* =========================
-   SECTIONS
+   4. SEKCJE (USUNIĘTA RAMKA)
 ========================= */
 
 .section {
-    max-width: 850px;
+    max-width: 800px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 40px 50px;
+    background: transparent;   /* brak białej ramki */
+    box-shadow: none;          /* brak cienia */
 }
 
 .section h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.section p {
+    text-align: justify;
 }
 
 /* =========================
-   POEMS
+   5. TYTUŁ STRONY
+========================= */
+
+.title-panel {
+    max-width: 800px;
+    margin: 90px auto 20px;
+    padding: 25px;
+    text-align: center;
+    background: #d2b48c;
+    border: 4px double black;
+}
+
+body.dark .title-panel {
+    background: #444;
+    border-color: #aaa;
+}
+
+.title-panel .main-title {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+.title-panel .motto {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+}
+
+/* =========================
+   6. WIERSZE
 ========================= */
 
 .poem-container {
-    max-width: 700px;
+    max-width: 680px;
     margin: 60px auto;
-    padding: 10px 20px;
-    text-align: center;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .poem-title {
-    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
     letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: 20px;
 }
 
 .poem-container p {
     text-align: left;
     white-space: pre-line;
+    margin: 0;
+    font-variant-ligatures: common-ligatures;
 }
 
 /* =========================
-   2-COLUMN POEM
-========================= */
-
-.poem-pair {
-    max-width: 1000px;
-    margin: 80px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    position: relative;
-    padding: 0 20px;
-}
-
-.poem-pair::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 1px;
-    background: #ccc;
-}
-
-.poem-col p {
-    white-space: pre-line;
-}
-
-/* =========================
-   AFTERWORD / TEXT
+   7. AFTERWORD
 ========================= */
 
 .afterword {
     max-width: 700px;
     margin: 40px auto;
     text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.afterword h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.afterword p {
+    margin-bottom: 1em;
 }
 
 /* =========================
-   QUOTE
+   8. RECENZJA
+========================= */
+
+.recenzja {
+    text-align: right;
+    max-width: 600px;
+    margin: 40px auto;
+    font-style: italic;
+}
+
+/* =========================
+   9. CYTAT
 ========================= */
 
 .quote {
-    margin: 20px auto;
+    margin-top: 20px;
     padding: 15px;
+    background: #f0f0f0;
     border-left: 4px solid #888;
     font-style: italic;
 }
 
 /* =========================
-   GALLERY
+   10. GALERIA
 ========================= */
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-    max-width: 900px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
 }
 
 .gallery img {
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.gallery img:hover {
-    transform: scale(1.03);
 }
 
 /* =========================
-   MODAL
+   11. MODAL
 ========================= */
 
 .modal {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
 }
 
-.modal img {
-    max-width: 85%;
-    max-height: 85%;
+.modal-content {
+    display: block;
+    margin: 5% auto;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 .close {
     position: absolute;
     top: 20px;
-    right: 25px;
+    right: 30px;
     font-size: 40px;
     color: white;
     cursor: pointer;
 }
 
 /* =========================
-   MOBILE
+   WIERSZ + TŁUMACZENIE (2 KOLUMNY)
 ========================= */
 
-@media (max-width: 768px) {
-    .poem-pair {
-        grid-template-columns: 1fr;
-    }
+.poem-pair {
+    max-width: 1000px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
 
-    .poem-pair::before {
-        display: none;
-    }
+/* kolumny */
+.poem-col {
+    max-width: 100%;
+}
 
-    .title-panel h1 {
-        font-size: 1.8em;
-    }
+/* tekst wiersza */
+.poem-col p {
+    white-space: pre-line;
+    text-align: left;
+}
 
-    .nav {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px;
-    }
+/* tytuły */
+.poem-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* meta (tomik, tłumacz) */
+.meta {
+    margin-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+/* tłumaczenie – delikatnie inne */
+.translation {
+    opacity: 0.85;
+}
+
+/* pionowa linia między kolumnami */
+.poem-pair::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: #ccc;
+}
+
+/* potrzebne do linii */
+.poem-pair {
+    position: relative;
+}
+
+.recenzja {
+    max-width: 600px;
+    margin: 40px auto;
+    font-style: italic;
+}
+
+.text-block p {
+    text-align: justify;
+}
+
+/* podpis autora */
+.recenzja footer {
+    text-align: right;
+    margin-top: 10px;
+    font-style: normal;
 }
 </style>
 </head>
@@ -291,12 +353,12 @@ body.dark .title-panel {
   <a href="#translations-en">Tłumaczenie tomiku na angielski</a>
   <a href="#translations-es">Tłumaczenie tomiku na hiszpański</a>
 
-  
+  <a href="#niewydane">Niewydane</a>
 
   <!-- 🔽 TU DODAJ TO -->
-  <a href="#niew-tomik-1">Tomik 1</a>
-  <a href="#niew-tomik-2">Tomik 2</a>
-  <a href="#niew-tomik-3">Tomik 3</a>
+  <a href="#tomik-1">Tomik 1</a>
+  <a href="#tomik-2">Tomik 2</a>
+  <a href="#tomik-3">Tomik 3</a>
 
   <a href="#rozproszone">Wiersze rozproszone</a>
   <a href="#opowiadania">Opowiadania</a>
@@ -1697,7 +1759,7 @@ al valor<br>
 
 <h2>Niewydane tomiki</h2>
 
-<section id="niew-tomik-1" class="tomik">
+<section id="tomik-1" class="tomik">
 <div class="tomik">
 <h3 class="tomik-title">ZE STADIONÓW ŚWIATA</h3>
 
@@ -1842,7 +1904,7 @@ sponsorem meczu powinna zostać tak zwana laga
 </div>
 
 <!-- TOMIK 2 -->
- <section id="niew-tomik-2" class="tomik">
+ <section id="tomik-2" class="tomik">
 <h3 class="tomik-title">DZIEŃ DOBRY, DO WIDZENIA I SPACERY MIĘDZY</h3>
 
 <article class="poem-container">
@@ -2083,7 +2145,7 @@ tych parę bajek.
 </div>
 
 <!-- TOMIK 3 -->
-<section id="niew-tomik-3" class="tomik">
+<section id="tomik-3" class="tomik">
 <h3 class="tomik-title">MŁODOŚĆ I INNE ODCIENIE ŻYCIA</h3>
 
 <article class="poem-container">
@@ -2351,6 +2413,165 @@ tych parę bajek.
 
 </section>
 
+
+<h1>OPOWIADANIA</h1>
+
+<!-- OPOWIADANIA -->
+<div class="section" id="opowiadania">
+  <h2>ŁÓZKO</h2>
+
+<p>Osiemnastoletnia dziewczyna biegnie labiryntem korytarzy, szukając jakiekolwiek rozwiązania. Od czasu do czasu potykając się, zgubiwszy lewy kapeć, dociera do białej ściany bez drzwi. W tej samej chwili słyszy kobiecy głos dobiegający z głośników zamontowanych we framudze każdego okna:</p>
+
+<p>– Szukaj mnie, cierpliwie dzień po dniu … Szukaj mnie…</em></p>
+
+<p>A niech to! Prześladowca włączył adapter z zepsutą płytą gramofonową. Igła wraca uparcie w to samo miejsce:</p>
+
+<p>– Szukaj mnie … szukaj mnie … szukaj mnie …</p>
+
+<p>To głos Edyty Geppert, w chwilach świetności uwielbianej przez tłumy polskiej piosenkarki, w roku 2030 zupełnie zapomnianej.</p>
+
+<p>W pułapce, w której się znalazła, nie było to aż tak istotne. Oczywiście, przemknął przez głowę tekst piosenki, który znała dzięki babci i wszystkowiedzącego YouTube, ale co z tego? Przebój muzyczny sprzed lat nie mówi nic o tym, gdzie znaleźć klucz do wyjścia z niebezpiecznej sytuacji. Prześladowca nie po to włączył akurat to nagranie, aby umilić jej czas. Miało przypominać zdarzenie sprzed lat, a tym samym upokarzać.</p>
+
+<p>Edyta Geppert uparcie prosiła ukochanego:</p>
+
+<p>– Mnie … dzień po dniu … szukaj mnie…</p>
+
+<p>Zaczęła się wpatrywać w plamę brudu na ścianie. Jej kształt przypominał serce z rysunków dziesięcioletniej Oli. Uśmiechnęła się. „Zaciek, a jednak bijącym życiem”. Zasłoniła oczy:</p>
+
+<p><strong>– Raz … dwa … trzy …</strong> – zaczęła liczyć. Przez moment wydawało jej się, że ktoś za nią stoi, ktoś dotyka pleców i szyi, ktoś odbiega od niej. Odwróciła się:</p>
+
+<p>– Szuuuukaaaam!!! …</p>
+
+<p>Zaczyna biec, ale już po chwili potyka się.</p>
+
+<p>Gdy spada, słyszy jeszcze własny głos:</p>
+
+<p>– … ukaaaaaaammm!!! ...</p>
+
+<p>Leży przez chwilę bez ruchu, z zamkniętymi oczyma, ale przytomna. Trzy grube materace zamortyzowały zsunięcie z piętrowego łóżka. Dziesięcioletnia Ola miała brata, Jaśka, który spał na poziomie zero. W dniu jedenastych urodzin utopił się w pobliskim jeziorku. Siostra nie pozwalała wyrzucić łóżka. Noc spędzała, jakby nigdy nic, na pierwszym pięterku wyrka. I jakby nigdy nic, rozmawiała z Jankiem. W kim się zakochała; że matematyca nie rozumie potrzeb dziecka, bo sama jest starą panną; jaką książkę przeczytała; że budują nowy dom przy głównej ulicy. Rodzice pozwolili Oli na takie zachowanie, rozumieli, że w ten sposób pracuje nad stratą brata.</p>
+
+<p>Tydzień temu obchodziliby oboje osiemnaste urodziny. Brat był nie tylko bratem, ale także bratem bliźniakiem. Od czasu do czasu śnił się jako Prześladowca, który zamknął siostrę w labiryncie niepokojących zdarzeń. Zawsze pod koniec snu ześlizguje się z łóżka. Materace tłumiące upadek leżały od niepamiętnych czasów, błogosławiona chwilo! Ojciec wpadł na ten pomysł, aby dzieci miały komfort skorzystania z łóżka.</p>
+
+<p>Otworzyła oczy:</p>
+
+<p>– Oj, braciszku, braciszku. Następnego takiego upadku raczej nie przeżyję. Powinnam porozmawiać z rodzicami o zmianie łóżka. Poza tym dostaję dziś kolejną dawkę somatotropiny i zaczynam rosnąć. Żegnajcie sto trzydzieści centymetrów wzrostu!</p>
+
+
+
+<!-- OPOWIADANIA -->
+<div class="section" id="opowiadania">
+<div class="afterword">
+  <h2>EWAKUACJA</h2>
+
+
+<p>Piątek,  siedemnasta osiem czasu lokalnego. Stoi przy parapecie. Jedna z trzech głów analizuje kształt korytarza. Druga fotografuje wciąż otwierające i zamykające się drzwi od windy. Ludzie wybiegają z mieszkań, wsiadają do elewatora. Po chwili wbiegają do podstawionych pojazdów, które zawożą ich na lotnisko.</p>
+<p>Trwa powszechna ewakuacja, ogłoszona dokładnie tydzień temu. Akcja, z tego  co mu powiedziano przebiega sprawnie, pod kontrolą Strażników Wszelkiego Porządku. Ludzie boją się przeciwstawić jakimkolwiek rozkazom. Jeden gest nieposłuszeństwa, a zamieniliby się w pył. Może nie dosłownie, lecz   nikt nie chce tego sprawdzać.</p>
+<p>Korytarz, na którym pracuje, szybko został oczyszczony z ludzi, zaledwie w kwadrans. Dziewięć pięter zostało odciążonych.  Jeszcze cztery piętra i Strażnicy Wszelkiego Porządku skończą robotę w budynku przy dawnej ulicy Nicejskiej na osiedlu zwanym przez ludzi Stegnami.  
+On sam jest poirytowany. Górne lewe ramię nie  działało tak, jak powinno.  Siłowniki zgrzytały potwornie, tak potwornie, że gdyby śpiewały ptaki, z pewnością mechaniczny dźwięk zagłuszałyby ich trele.</p>
+<p>Uzbrojona w czujniki chemiczne sonda wreszcie zaczęła się wysuwać, lecz po kilku centymetrach zablokowała się w kanale prowadzącym. Przez chwilę napierała na wykrzywioną krawędź obudowy, ale jedynym efektem był coraz większy hałas.</p>
+<p>Uruchomił prawe ramię tą samą procedurą co lewe. Lepiej poszło. Już po chwili próbnik zagłębił się w miękkiej ziemi, która wypełniała doniczkę stojącą na parapecie. Rozpoczął  analizę:</p>
+<p>– Warunki sprzyjające. Przewidywany nadmierny regres masy roślinnej. – Robot wyrecytował wyniki.</p>
+<p>Przykurczył osiem nóg, osiadł ciężko tuż nad betonową podłogą i zwiesił głowę. Tylko wysuwane ramiona kontrolowane przez automatyczne programy wciąż hałasowały. Niepotrzebnie. Wszystkie zabiegi szły ku dobremu. Aby zniszczyć istniejący świat.</p>
+<p>Kilka minut przed osiemnastą akcja wysiedlania ludzi z klatki szóstej bloku przy ulicy Nicejskiej, w dawnej stolicy Polski, Warszawie, została zakończona. Taki raport przekazał mu Główny Strażnik Porządku. Przyjął go w spokoju. Mógł teraz pracować bez przeszkód.</p>
+
+<p>Jednak pomylił się. Nie zaznał spokoju. O osiemnastej czasu lokalnego drzwi windy otworzyły się po raz ostatni. Z kabiny wyszło ludzkie dziecko płci żeńskiej. Z szybkiej analizy, jakiej dokonał kamerą zainstalowaną w prawym górnym odnóżu, wynikało, że ma dwanaście lat. Stanęło przed AM-67:</p>
+<p>- Ale chrzęścisz! - i zaczęło się śmiać.</p>
+<p>Był teraz zajęty analizą grzejnika zamontowanego pod parapetem. Nic imponującego. Taki typ ogrzewacza, jak ten, widział już niejeden raz.  Jeśli ludziom zrobił trzy tysiące zdjęć, to tyle samo tym nagrzewaczom. Ludzie byli i pozostaną zmarzluchami. Aż do śmierci. Która już ma niebawem nastąpić.
+Dziecko wciąż się śmiało. Trzeba w końcu zareagować.</p>
+<p>-Pracuję, nie widzisz? Jestem zajęty! Mam jeszcze przeprowadzić analizę podłogi, zanim to wszystko gówno rozleci się w pył.
+Dziewczynka przestała się śmiać. Zapytała:</p>
+<p>- A co to jest znaczy: „rozleci się w pył”? </p>
+<p>Popatrzył na dziewczynkę i zaproponował porównanie:</p>
+<p>- To jakby warkocze, które nosisz, nagle rozwiązać i ogolić twoją głowę na łyso. Czyli włosy przestaną istnieć.</p>
+<p>Dwa blond mysie ogonki rzeczywiście zwisały jej do ramion. Dotknęła ich. Lecz nadal nie rozumiała:</p>
+<p>- Przestaną istnieć? Ale włosy odrastają przecież ...</p>
+<p>Po chwili znalazł inną odpowiedz:</p>
+<p>- To, co widzisz, wszystko to dookoła  – umrze. Dodał szybko:<p>
+<p>- I zasiejemy w tym miejscu nowe życie.</p>
+<p>Dziewczynka zawyrokowała:</p>
+<p>- Odrosną … Włosy odrosną.</p>
+<p>Zapadła dziwna cisza. Dziecko zakasłało nerwowo:</p>
+<p>- To ja pójdę po tatę. Może on coś zaradzi.</p>
+<p>Dygnęła i wywołała windę.</p>
+
+<p>AM-67 nie był zadowolony z rozmowy z dziewczynką. Infantylna mała dzikuska i tyle.  Przede wszystkim oderwała go od pracy. Czyż nie wspomniał na początku, że miał przecież bardzo ważne zadanie do wykonania? Poza tym  zadaje niestosowne pytania. A on był nader cierpliwy.  No i niby  na co ma zaradzić ojciec tej małej?  Najważniejsze – c o  o n i  t u  r o b i ą? Komunikat Głównego Strażnika Wszelkiego Porządku był jasny i oczywisty. W budynku nie ma ani odrobiny ludzkiego życia.</p>
+
+<p>Dziewczynka z mysim ogonkiem wróciła w niedzielę, o dziesiątej dwanaście. Chrząknęła, zauważyła bowiem, że był odwrócony tyłem do windy:
+- To ja … To znaczy ...  My. Ja i tatuś.</p>
+<p>Analizował właśnie rury, przez które niedawno jeszcze przepływały nieczystości i jednocześnie robił zdjęcia. A oni przeszkadzali! Według kalendarza pracy został jeszcze tylko tydzień, zanim nastąpi ostateczne wyburzenie. A wszystko trzeba skatalogować. Aby białe plamy w szkolnych podręcznikach zostały wypełnione blaskiem przeszłości.</p>
+<p>- Panie robocie, hmmm, a kuku, tu jesteśmy … - dziewczynka przerwała jego rozmyślania, śmiejąc się nerwowo.</p>
+<p>- …  Najprostszy kod cyfrowy – głośno powtórzył jakąś ukrytą  myśl.</p>
+<p>- Aha, ten ... tego ... Bo pan stoi tyłem … - próbowała nie tracić pewności siebie.</p>
+<p>Nie odwracając się, zaczął krzyczeć:</p>
+<p>- Czy przyszliście na pogaduszki, czy z konkretną sprawą? A tak między nami mówiąc, was tutaj nie powinno być. I gdzie wy mieszkacie? Na którym piętrze???</p>
+<p>-Strasznie chrzęścisz – do rozmowy włączył się mężczyzna stojący obok dziewczynki z mysim ogonkiem. Miał na sobie podniszczoną kurtkę termoregulacyjną oraz jeansy i adidasy – Oleńka mówiła, że trzeba pomóc, przyniosłem  narzędzia … - wskazał głową walizkę, którą postawił tuż przy lewej nodze.</p>
+<p>-Nie trzeba żadnej naprawy, zresztą nie mamy czym zapłacić! - irytacja AM-67 sięgnęła zenitu.</p>
+<p>- Przez sześć długich lat nie mieliście czym zapłacić – ripostował ojciec Oleńki.</p>
+<p>-Ludzi w tym budynku być nie powinno! - wrzasnął robot. Wreszcie odwrócił korpus, ustawił wszystkie głowy w jednym rzędzie, uruchomił nogi. Podszedł kilka kroków w kierunku windy.</p>
+<p>-Ale jesteśmy – zadeklarował mężczyzna, cofnął się, jakby chciał przepuścić robota, dziewczynka podbiegła do parapetu – bo kim my jesteśmy w końcu, jak nie ludźmi? </p>
+<p>Robot zatrzymał się tuż przy nieznajomym.</p>
+<p>- Ludźmi, ale nie o to tu chodzi. Była ewakuacja. E – wa – ku -a – cja.</p>
+<p>- Mieszkamy w piwnicy, w samym końcu korytarza – mężczyzna tak to powiedział, jakby szeregowy stał przed majorem. Z szacunkiem, ale i z dystansem.</p>
+<p>- W piwnicy nie powinno być mieszkań, nie mamy w naszych katalogach takich danych – zdziwił się AM-67.</p>
+<p>-I dlatego nas nie znaleźliście … - z pewną nutą satysfakcji zaripostował ojciec Oleńki.</p>
+<p>- Nie znaleźli – poprawił robot.</p>
+<p>- Dlaczego: znaleźli? To ty nie należysz do … - tym razem zdziwił się humanoidalny.</p>
+<p>- … do tych bandziorów, do Strażników Porządku, to chciałeś powiedzieć, czyż tak?</p>
+
+<p>- …</p>
+<p>- Nieważne.</p>
+<p>Wiedział, że w tej wymianie zdań jest błąd. Uczące się małe istoty umiały jednak przyjmować niepasujące do modeli fakty bez szkody dla działania najważniejszych systemów.</p>
+<p>Człowiek podszedł do okna, przytulił Oleńkę. Zaryzykował:</p>
+<p>- Tu jest i będzie osiedle.</p>
+
+<p>Obudził ich łomot do drzwi. Usłyszeli krzyk:</p>
+<p>- Otwierać, otwierać!!! - i po chwili:
+<p>- Polaczki zawszone, otwierać!!!
+<p>W tym samym momencie  dziewczynka wyskoczyła ze swojego łózka i z płaczem przytuliła się do ojca. Mężczyzna, nie do końca rozespany,  objął córkę ramionami. Dopiero teraz zdał sobie sprawę z powagi sytuacji.</p>
+<p>Tamci , za pomocą metalowych narzędzi wydłubali  dziurę w drzwiach, i przez nią starali się dostać się do piwnicznej izby.</p>
+<p>Było ich trzech, a raczej czterech. Dowódca Straży, dwóch przybocznych, no i on – AM-67. Żołnierze zaczęli  przeszukiwać mieszkanie. Dowódca Straży stanął pośrodku pomieszczenia, włączył małą kamerkę umieszczoną powyżej czegoś, co można było uznać za oczy, ewentualnie gogle narciarskie.</p>
+<p>- No, teraz widzę lepiej – powiedział z dumą egocentryka. - No, kogo tu mamy? </p>
+<p>Obiektyw skierował w stronę zastraszonych ludzi.</p>
+<p>AM – 67, dotąd stojący w cieniu wydarzeń, odezwał się pokornie:</p>
+<p>- Dwoje humanoidalnych, panie. Nie zarejestrowanych. Włóczyli się po budynku, gdy byłem zajęty … </p>
+<p>- Cisza! Nie pytałem, się co robili. Pytałem tylko o ich status – warknął Strażnik – a z tobą, M-67, zro… na ciebie czeka niespodzianka.</p>
+
+<p>Trzymał mocno Oleńkę za dłoń. Gdy zobaczył kabinę łazienkową z szeregiem słuchawek prysznicowych, wystraszył się. Dziadek opowiadał o kąpielach, w takim miejscu jak Auschwitz,  które kończyły się gwałtowną śmiercią. Bał się przejść przez próg; córka zdziwiła się:</p>
+<p>- Tatku, co ty, nie chcesz się wykąpać? Opowiadałeś mi, że kąpiel jest przyjemna …</p>
+<p>- Tak, przyjemna, Oleńko.  Pod warunkiem, że bez przymusu.</p>
+<p>Za nimi stali przyboczni Strażnika Porządku, ci sami, którzy przeszukiwali mieszkanie mężczyzny i jego córki. Byli zbudowani podobnie do AM-67, tylko nie mieli trzech, a dwie głowy.</p>
+<p>- Szybciej, szybciej, szybciej !!!</p>
+<p>Zakręciło mu się w głowie. Dziadek wspominał o pośpiechu, jakim wykazywano się podczas masowej eksterminacji, nie tylko w Auschwitz.</p>
+<p>- Szybciej, no – włazić, śmierdziele, pod prysznic!!! Nie możecie przecież jechać na lotnisko brudni i obdarci.</p>
+<p>Nic złego im się nie stało! Z dyszy prysznica poleciała najprawdziwsza woda, mydło pachniało dobrymi czasy,  a na krzesłach czekało czyste, wyprasowane ubranie. Przypilnowano również, aby po kąpieli czuli się swobodnie. W odpowiednim czasie ustawiono parawany.  To dobrze, że zadbano o ten szczegół, który nie był tak naprawdę bez znaczenia.  Córka nie powinna oglądać gołego ojca.</p>
+<p>- Tatusiu, tatusiu … - usłyszał jej piskliwy głosik. </p>
+<p>- Gdzie jesteś, Oleńka?</p>
+<p>- Za tym czymś, co stoi przy oknie … Już się ubrałam.  A ty, tatusiu?</p>
+<p>- To jest parawan, często używany na plażach. A ja jeszcze w kabinie siedzę. Tylko wytrę się ręcznikiem i wychodzę.  Zamknij na chwilę oczy i nie wychodź zza parawanu.</p>
+<p>Po dziesięciu minutach pachnący i ubrani tulili się i śmiali. Dziewczynka  nie pozwoliła tym razem zakręcić sobie warkoczyków.</p>
+
+<p>Przyboczni nie przeszkadzali. Opuścili broń ku ziemi. Zaczęli się z zaciekawieniem przyglądać humanoidalnym. Któryś prychnął, co mogło oznaczać śmiech.
+Naraz do kabiny łazienkowej wszedł Strażnik Porządku. Krzyknął:</p>
+<p>- Co tu się dzieje, do jasnego światłowodu? Baczność szeregiem,  wszyscy!!!</p>
+<p>Gdy wykonali rozkaz, zwrócił się do przybocznych:</p>
+<p>- Co to ma znaczyć??? Mieliście ich pilnować, a wy co? Zabawę sobie urządzacie z więźniami???? </p>
+<p>Nic nie odpowiedzieli. Kontynuował:</p>
+<p>- Z wami zrobimy to samo co z AM-67, tak mi się wydaje.</p>
+<p>Przyboczni  zamilkli. Za to Ola zakaszlała nerwowo:</p>
+<p>- Pan jest niezbyt grzeczny.</p>
+<p>Strażnik Porządku podszedł do dziewczynki:</p>
+<p>- To ty jesteś niegrzeczna, lalo, nie użyłaś dezodorantu! A wy, humanoidalni, używacie zawsze po kąpieli dezodorantu.  Twój tatusiek też powinien się popryskać zapachem oliwkowym, ha ha ha!!!! Coś tu mam dla was, kochani. - Zaśmiał się histerycznie, w chwytaku podłączonym do górnego lewego ramienia pojawił się mały, okrągły  pojemnik. Spray!, przemknęło przez głowę mężczyźnie.</p>
+<p>Dopiero teraz zrozumiał. To było przedstawienie, wszystko! Kąpiel, czyste ubrania. I to dziwne, nadmierne zaciekawienie Straży Przybocznej! Chciał zareagować, krzyknąć, zamachać rękoma. Zrobił jeden, dwa kroki, aby przystąpić do córki. Poczuł jednak cios w brzuch. Jeden ze Strażników dostrzegł nadmierną pracę nóg mężczyzny i zareagował.</p>
+<p>Wydarzenia potoczyły się teraz szybko. Ojciec Oli upadł  na podłogę, dziecko podbiegło doń niezwłocznie, Strażnik  nacisnął spray. Po chwili gęsta, biała chmura, podobna do mgły otoczyła sześć postaci.</p>
+
+<p>Ola i jej ojciec wskutek działania trucizny  ukrytej w sprayu ulegli poparzeniom; nie udzielono im żadnej pomocy medycznej, zmarli kilka dni po oczyszczającej kąpieli. Ich ciała wepchnięto  do jamy wykopanej niedaleko bloku, w którym mieszkali. Obok pieczary ustawiono szkielet AM-67; odtąd nazywany Pomnikiem Straconego Pokolenia. Wszystkie dane, które zdążył zebrać, przekazano do nowo utworzonego Ministerstwa Przeszłości. Miesiąc po wyżej opisanych wydarzeniach na cokole Pomnika Straconego Pokolenia zauważono napis: „Tu jest i będzie osiedle”.</p>
+</div>
+
+
+
+</body>
+</html>
+
 <!-- ROZPROSZONE -->
 <div class="section" id="rozproszone">
 <h2>Rozproszone wiersze</h2>
@@ -2608,159 +2829,7 @@ Pocisk uderza w blok mieszkalny.
 Ginie lampka nocna, miś, karta kredytowa,
 ludzie.
 
-<!-- OPOWIADANIA -->
-<div class="section" id="opowiadania">
-  <h2>ŁÓZKO</h2>
 
-<p>Osiemnastoletnia dziewczyna biegnie labiryntem korytarzy, szukając jakiekolwiek rozwiązania. Od czasu do czasu potykając się, zgubiwszy lewy kapeć, dociera do białej ściany bez drzwi. W tej samej chwili słyszy kobiecy głos dobiegający z głośników zamontowanych we framudze każdego okna:</p>
-
-<p>– Szukaj mnie, cierpliwie dzień po dniu … Szukaj mnie…</em></p>
-
-<p>A niech to! Prześladowca włączył adapter z zepsutą płytą gramofonową. Igła wraca uparcie w to samo miejsce:</p>
-
-<p>– Szukaj mnie … szukaj mnie … szukaj mnie …</p>
-
-<p>To głos Edyty Geppert, w chwilach świetności uwielbianej przez tłumy polskiej piosenkarki, w roku 2030 zupełnie zapomnianej.</p>
-
-<p>W pułapce, w której się znalazła, nie było to aż tak istotne. Oczywiście, przemknął przez głowę tekst piosenki, który znała dzięki babci i wszystkowiedzącego YouTube, ale co z tego? Przebój muzyczny sprzed lat nie mówi nic o tym, gdzie znaleźć klucz do wyjścia z niebezpiecznej sytuacji. Prześladowca nie po to włączył akurat to nagranie, aby umilić jej czas. Miało przypominać zdarzenie sprzed lat, a tym samym upokarzać.</p>
-
-<p>Edyta Geppert uparcie prosiła ukochanego:</p>
-
-<p>– Mnie … dzień po dniu … szukaj mnie…</p>
-
-<p>Zaczęła się wpatrywać w plamę brudu na ścianie. Jej kształt przypominał serce z rysunków dziesięcioletniej Oli. Uśmiechnęła się. „Zaciek, a jednak bijącym życiem”. Zasłoniła oczy:</p>
-
-<p><strong>– Raz … dwa … trzy …</strong> – zaczęła liczyć. Przez moment wydawało jej się, że ktoś za nią stoi, ktoś dotyka pleców i szyi, ktoś odbiega od niej. Odwróciła się:</p>
-
-<p>– Szuuuukaaaam!!! …</p>
-
-<p>Zaczyna biec, ale już po chwili potyka się.</p>
-
-<p>Gdy spada, słyszy jeszcze własny głos:</p>
-
-<p>– … ukaaaaaaammm!!! ...</p>
-
-<p>Leży przez chwilę bez ruchu, z zamkniętymi oczyma, ale przytomna. Trzy grube materace zamortyzowały zsunięcie z piętrowego łóżka. Dziesięcioletnia Ola miała brata, Jaśka, który spał na poziomie zero. W dniu jedenastych urodzin utopił się w pobliskim jeziorku. Siostra nie pozwalała wyrzucić łóżka. Noc spędzała, jakby nigdy nic, na pierwszym pięterku wyrka. I jakby nigdy nic, rozmawiała z Jankiem. W kim się zakochała; że matematyca nie rozumie potrzeb dziecka, bo sama jest starą panną; jaką książkę przeczytała; że budują nowy dom przy głównej ulicy. Rodzice pozwolili Oli na takie zachowanie, rozumieli, że w ten sposób pracuje nad stratą brata.</p>
-
-<p>Tydzień temu obchodziliby oboje osiemnaste urodziny. Brat był nie tylko bratem, ale także bratem bliźniakiem. Od czasu do czasu śnił się jako Prześladowca, który zamknął siostrę w labiryncie niepokojących zdarzeń. Zawsze pod koniec snu ześlizguje się z łóżka. Materace tłumiące upadek leżały od niepamiętnych czasów, błogosławiona chwilo! Ojciec wpadł na ten pomysł, aby dzieci miały komfort skorzystania z łóżka.</p>
-
-<p>Otworzyła oczy:</p>
-
-<p>– Oj, braciszku, braciszku. Następnego takiego upadku raczej nie przeżyję. Powinnam porozmawiać z rodzicami o zmianie łóżka. Poza tym dostaję dziś kolejną dawkę somatotropiny i zaczynam rosnąć. Żegnajcie sto trzydzieści centymetrów wzrostu!</p>
-
-
-
-<!-- OPOWIADANIA -->
-<div class="section" id="opowiadania">
-  <h2>EWAKUACJA</h2>
-
-
-<p>Piątek,  siedemnasta osiem czasu lokalnego. Stoi przy parapecie. Jedna z trzech głów analizuje kształt korytarza. Druga fotografuje wciąż otwierające i zamykające się drzwi od windy. Ludzie wybiegają z mieszkań, wsiadają do elewatora. Po chwili wbiegają do podstawionych pojazdów, które zawożą ich na lotnisko.</p>
-<p>Trwa powszechna ewakuacja, ogłoszona dokładnie tydzień temu. Akcja, z tego  co mu powiedziano przebiega sprawnie, pod kontrolą Strażników Wszelkiego Porządku. Ludzie boją się przeciwstawić jakimkolwiek rozkazom. Jeden gest nieposłuszeństwa, a zamieniliby się w pył. Może nie dosłownie, lecz   nikt nie chce tego sprawdzać.</p>
-<p>Korytarz, na którym pracuje, szybko został oczyszczony z ludzi, zaledwie w kwadrans. Dziewięć pięter zostało odciążonych.  Jeszcze cztery piętra i Strażnicy Wszelkiego Porządku skończą robotę w budynku przy dawnej ulicy Nicejskiej na osiedlu zwanym przez ludzi Stegnami.  
-On sam jest poirytowany. Górne lewe ramię nie  działało tak, jak powinno.  Siłowniki zgrzytały potwornie, tak potwornie, że gdyby śpiewały ptaki, z pewnością mechaniczny dźwięk zagłuszałyby ich trele.</p>
-<p>Uzbrojona w czujniki chemiczne sonda wreszcie zaczęła się wysuwać, lecz po kilku centymetrach zablokowała się w kanale prowadzącym. Przez chwilę napierała na wykrzywioną krawędź obudowy, ale jedynym efektem był coraz większy hałas.</p>
-<p>Uruchomił prawe ramię tą samą procedurą co lewe. Lepiej poszło. Już po chwili próbnik zagłębił się w miękkiej ziemi, która wypełniała doniczkę stojącą na parapecie. Rozpoczął  analizę:</p>
-<p><strong>– Warunki sprzyjające. Przewidywany nadmierny regres masy roślinnej. – Robot wyrecytował wyniki.</p>
-<p>Przykurczył osiem nóg, osiadł ciężko tuż nad betonową podłogą i zwiesił głowę. Tylko wysuwane ramiona kontrolowane przez automatyczne programy wciąż hałasowały. Niepotrzebnie. Wszystkie zabiegi szły ku dobremu. Aby zniszczyć istniejący świat.</p>
-<p>Kilka minut przed osiemnastą akcja wysiedlania ludzi z klatki szóstej bloku przy ulicy Nicejskiej, w dawnej stolicy Polski, Warszawie, została zakończona. Taki raport przekazał mu Główny Strażnik Porządku. Przyjął go w spokoju. Mógł teraz pracować bez przeszkód.</p>
-
-<p>Jednak pomylił się. Nie zaznał spokoju. O osiemnastej czasu lokalnego drzwi windy otworzyły się po raz ostatni. Z kabiny wyszło ludzkie dziecko płci żeńskiej. Z szybkiej analizy, jakiej dokonał kamerą zainstalowaną w prawym górnym odnóżu, wynikało, że ma dwanaście lat. Stanęło przed AM-67:</p>
-<p>- Ale chrzęścisz! - i zaczęło się śmiać.</p>
-<p>Był teraz zajęty analizą grzejnika zamontowanego pod parapetem. Nic imponującego. Taki typ ogrzewacza, jak ten, widział już niejeden raz.  Jeśli ludziom zrobił trzy tysiące zdjęć, to tyle samo tym nagrzewaczom. Ludzie byli i pozostaną zmarzluchami. Aż do śmierci. Która już ma niebawem nastąpić.
-Dziecko wciąż się śmiało. Trzeba w końcu zareagować.</p>
-<p><strong>-Pracuję, nie widzisz? Jestem zajęty! Mam jeszcze przeprowadzić analizę podłogi, zanim to wszystko gówno rozleci się w pył.
-Dziewczynka przestała się śmiać. Zapytała:</p>
-<p>- A co to jest znaczy: „rozleci się w pył”? </p>
-<p>Popatrzył na dziewczynkę i zaproponował porównanie:</p>
-<p>- To jakby warkocze, które nosisz, nagle rozwiązać i ogolić twoją głowę na łyso. Czyli włosy przestaną istnieć.</p>
-<p>Dwa blond mysie ogonki rzeczywiście zwisały jej do ramion. Dotknęła ich. Lecz nadal nie rozumiała:</p>
-<p><strong>- Przestaną istnieć? Ale włosy odrastają przecież ...</p>
-<p>Po chwili znalazł inną odpowiedz:</p>
-<p>- To, co widzisz, wszystko to dookoła  – umrze. Dodał szybko:<p>
-<p>- I zasiejemy w tym miejscu nowe życie.</p>
-<p>Dziewczynka zawyrokowała:</p>
-<p>- Odrosną … Włosy odrosną.</p>
-<p>Zapadła dziwna cisza. Dziecko zakasłało nerwowo:</p>
-<p>- To ja pójdę po tatę. Może on coś zaradzi.</p>
-<p>Dygnęła i wywołała windę.</p>
-
-<p>AM-67 nie był zadowolony z rozmowy z dziewczynką. Infantylna mała dzikuska i tyle.  Przede wszystkim oderwała go od pracy. Czyż nie wspomniał na początku, że miał przecież bardzo ważne zadanie do wykonania? Poza tym  zadaje niestosowne pytania. A on był nader cierpliwy.  No i niby  na co ma zaradzić ojciec tej małej?  Najważniejsze – c o  o n i  t u  r o b i ą? Komunikat Głównego Strażnika Wszelkiego Porządku był jasny i oczywisty. W budynku nie ma ani odrobiny ludzkiego życia.</p>
-
-<p>Dziewczynka z mysim ogonkiem wróciła w niedzielę, o dziesiątej dwanaście. Chrząknęła, zauważyła bowiem, że był odwrócony tyłem do windy:
-- To ja … To znaczy ...  My. Ja i tatuś.</p>
-<p>Analizował właśnie rury, przez które niedawno jeszcze przepływały nieczystości i jednocześnie robił zdjęcia. A oni przeszkadzali! Według kalendarza pracy został jeszcze tylko tydzień, zanim nastąpi ostateczne wyburzenie. A wszystko trzeba skatalogować. Aby białe plamy w szkolnych podręcznikach zostały wypełnione blaskiem przeszłości.</p>
-<p><strong>- Panie robocie, hmmm, a kuku, tu jesteśmy … - dziewczynka przerwała jego rozmyślania, śmiejąc się nerwowo.</p>
-<p><strong>- …  Najprostszy kod cyfrowy – głośno powtórzył jakąś ukrytą  myśl.</p>
-<p><strong>- Aha, ten ... tego ... Bo pan stoi tyłem … - próbowała nie tracić pewności siebie.</p>
-<p>Nie odwracając się, zaczął krzyczeć:</p>
-<p><strong>- Czy przyszliście na pogaduszki, czy z konkretną sprawą? A tak między nami mówiąc, was tutaj nie powinno być. I gdzie wy mieszkacie? Na którym piętrze???</p>
-<p>-Strasznie chrzęścisz – do rozmowy włączył się mężczyzna stojący obok dziewczynki z mysim ogonkiem. Miał na sobie podniszczoną kurtkę termoregulacyjną oraz jeansy i adidasy – Oleńka mówiła, że trzeba pomóc, przyniosłem  narzędzia … - wskazał głową walizkę, którą postawił tuż przy lewej nodze.</p>
-<p><strong>-Nie trzeba żadnej naprawy, zresztą nie mamy czym zapłacić! - irytacja AM-67 sięgnęła zenitu.</p>
-<p><strong>- Przez sześć długich lat nie mieliście czym zapłacić – ripostował ojciec Oleńki.</p>
-<p><strong>-Ludzi w tym budynku być nie powinno! - wrzasnął robot. Wreszcie odwrócił korpus, ustawił wszystkie głowy w jednym rzędzie, uruchomił nogi. Podszedł kilka kroków w kierunku windy.</p>
-<p><strong>-Ale jesteśmy – zadeklarował mężczyzna, cofnął się, jakby chciał przepuścić robota, dziewczynka podbiegła do parapetu – bo kim my jesteśmy w końcu, jak nie ludźmi? </p>
-<p>Robot zatrzymał się tuż przy nieznajomym.</p>
-<p><strong>- Ludźmi, ale nie o to tu chodzi. Była ewakuacja. E – wa – ku -a – cja.</p>
-<p><strong>- Mieszkamy w piwnicy, w samym końcu korytarza – mężczyzna tak to powiedział, jakby szeregowy stał przed majorem. Z szacunkiem, ale i z dystansem.</p>
-<p><strong>- W piwnicy nie powinno być mieszkań, nie mamy w naszych katalogach takich danych – zdziwił się AM-67.</p>
-<p><strong>-I dlatego nas nie znaleźliście … - z pewną nutą satysfakcji zaripostował ojciec Oleńki.</p>
-<p><strong>- Nie znaleźli – poprawił robot.</p>
-<p><strong>- Dlaczego: znaleźli? To ty nie należysz do … - tym razem zdziwił się humanoidalny.</p>
-<p><strong>- … do tych bandziorów, do Strażników Porządku, to chciałeś powiedzieć, czyż tak?</p>
-
-<p><strong>- …</p>
-<p>- Nieważne.</p>
-<p>Wiedział, że w tej wymianie zdań jest błąd. Uczące się małe istoty umiały jednak przyjmować niepasujące do modeli fakty bez szkody dla działania najważniejszych systemów.</p>
-<p>Człowiek podszedł do okna, przytulił Oleńkę. Zaryzykował:</p>
-<p>- Tu jest i będzie osiedle.</p>
-
-<p><strong>Obudził ich łomot do drzwi. Usłyszeli krzyk:</p>
-<p><strong>- Otwierać, otwierać!!! - i po chwili:
-<p><strong>- Polaczki zawszone, otwierać!!!
-<p>W tym samym momencie  dziewczynka wyskoczyła ze swojego łózka i z płaczem przytuliła się do ojca. Mężczyzna, nie do końca rozespany,  objął córkę ramionami. Dopiero teraz zdał sobie sprawę z powagi sytuacji.</p>
-<p>Tamci , za pomocą metalowych narzędzi wydłubali  dziurę w drzwiach, i przez nią starali się dostać się do piwnicznej izby.</p>
-<p>Było ich trzech, a raczej czterech. Dowódca Straży, dwóch przybocznych, no i on – AM-67. Żołnierze zaczęli  przeszukiwać mieszkanie. Dowódca Straży stanął pośrodku pomieszczenia, włączył małą kamerkę umieszczoną powyżej czegoś, co można było uznać za oczy, ewentualnie gogle narciarskie.</p>
-<p><strong>- No, teraz widzę lepiej – powiedział z dumą egocentryka. - No, kogo tu mamy? </p>
-<p>Obiektyw skierował w stronę zastraszonych ludzi.</p>
-<p>AM – 67, dotąd stojący w cieniu wydarzeń, odezwał się pokornie:</p>
-<p><strong>- Dwoje humanoidalnych, panie. Nie zarejestrowanych. Włóczyli się po budynku, gdy byłem zajęty … </p>
-<p><strong>- Cisza! Nie pytałem, się co robili. Pytałem tylko o ich status – warknął Strażnik – a z tobą, M-67, zro… na ciebie czeka niespodzianka.</p>
-
-<p>Trzymał mocno Oleńkę za dłoń. Gdy zobaczył kabinę łazienkową z szeregiem słuchawek prysznicowych, wystraszył się. Dziadek opowiadał o kąpielach, w takim miejscu jak Auschwitz,  które kończyły się gwałtowną śmiercią. Bał się przejść przez próg; córka zdziwiła się:</p>
-<p>- Tatku, co ty, nie chcesz się wykąpać? Opowiadałeś mi, że kąpiel jest przyjemna …</p>
-<p>- Tak, przyjemna, Oleńko.  Pod warunkiem, że bez przymusu.</p>
-<p>Za nimi stali przyboczni Strażnika Porządku, ci sami, którzy przeszukiwali mieszkanie mężczyzny i jego córki. Byli zbudowani podobnie do AM-67, tylko nie mieli trzech, a dwie głowy.</p>
-<p><strong>- Szybciej, szybciej, szybciej !!!</p>
-<p>Zakręciło mu się w głowie. Dziadek wspominał o pośpiechu, jakim wykazywano się podczas masowej eksterminacji, nie tylko w Auschwitz.</p>
-<p><strong>- Szybciej, no – włazić, śmierdziele, pod prysznic!!! Nie możecie przecież jechać na lotnisko brudni i obdarci.</p>
-<p>Nic złego im się nie stało! Z dyszy prysznica poleciała najprawdziwsza woda, mydło pachniało dobrymi czasy,  a na krzesłach czekało czyste, wyprasowane ubranie. Przypilnowano również, aby po kąpieli czuli się swobodnie. W odpowiednim czasie ustawiono parawany.  To dobrze, że zadbano o ten szczegół, który nie był tak naprawdę bez znaczenia.  Córka nie powinna oglądać gołego ojca.</p>
-<p>- Tatusiu, tatusiu … - usłyszał jej piskliwy głosik. </p>
-<p><strong>- Gdzie jesteś, Oleńka?</p>
-<p><strong>- Za tym czymś, co stoi przy oknie … Już się ubrałam.  A ty, tatusiu?</p>
-<p><strong>- To jest parawan, często używany na plażach. A ja jeszcze w kabinie siedzę. Tylko wytrę się ręcznikiem i wychodzę.  Zamknij na chwilę oczy i nie wychodź zza parawanu.</p>
-<p>Po dziesięciu minutach pachnący i ubrani tulili się i śmiali. Dziewczynka  nie pozwoliła tym razem zakręcić sobie warkoczyków.</p>
-
-<p>Przyboczni nie przeszkadzali. Opuścili broń ku ziemi. Zaczęli się z zaciekawieniem przyglądać humanoidalnym. Któryś prychnął, co mogło oznaczać śmiech.
-Naraz do kabiny łazienkowej wszedł Strażnik Porządku. Krzyknął:</p>
-<p><strong>- Co tu się dzieje, do jasnego światłowodu? Baczność szeregiem,  wszyscy!!!</p>
-<p>Gdy wykonali rozkaz, zwrócił się do przybocznych:</p>
-<p>- Co to ma znaczyć??? Mieliście ich pilnować, a wy co? Zabawę sobie urządzacie z więźniami???? </p>
-<p>Nic nie odpowiedzieli. Kontynuował:</p>
-<p><strong>- Z wami zrobimy to samo co z AM-67, tak mi się wydaje.</p>
-<p>Przyboczni  zamilkli. Za to Ola zakaszlała nerwowo:</p>
-<p><strong>- Pan jest niezbyt grzeczny.</p>
-<p>Strażnik Porządku podszedł do dziewczynki:</p>
-<p><strong>- To ty jesteś niegrzeczna, lalo, nie użyłaś dezodorantu! A wy, humanoidalni, używacie zawsze po kąpieli dezodorantu.  Twój tatusiek też powinien się popryskać zapachem oliwkowym, ha ha ha!!!! Coś tu mam dla was, kochani. - Zaśmiał się histerycznie, w chwytaku podłączonym do górnego lewego ramienia pojawił się mały, okrągły  pojemnik. Spray!, przemknęło przez głowę mężczyźnie.</p>
-<p>Dopiero teraz zrozumiał. To było przedstawienie, wszystko! Kąpiel, czyste ubrania. I to dziwne, nadmierne zaciekawienie Straży Przybocznej! Chciał zareagować, krzyknąć, zamachać rękoma. Zrobił jeden, dwa kroki, aby przystąpić do córki. Poczuł jednak cios w brzuch. Jeden ze Strażników dostrzegł nadmierną pracę nóg mężczyzny i zareagował.</p>
-<p>Wydarzenia potoczyły się teraz szybko. Ojciec Oli upadł  na podłogę, dziecko podbiegło doń niezwłocznie, Strażnik  nacisnął spray. Po chwili gęsta, biała chmura, podobna do mgły otoczyła sześć postaci.</p>
-
-<p>Ola i jej ojciec wskutek działania trucizny  ukrytej w sprayu ulegli poparzeniom; nie udzielono im żadnej pomocy medycznej, zmarli kilka dni po oczyszczającej kąpieli. Ich ciała wepchnięto  do jamy wykopanej niedaleko bloku, w którym mieszkali. Obok pieczary ustawiono szkielet AM-67; odtąd nazywany Pomnikiem Straconego Pokolenia. Wszystkie dane, które zdążył zebrać, przekazano do nowo utworzonego Ministerstwa Przeszłości. Miesiąc po wyżej opisanych wydarzeniach na cokole Pomnika Straconego Pokolenia zauważono napis: „Tu jest i będzie osiedle”.</p>
-
-
-
-</body>
-</html>
 
 
 <!-- Modal -->
@@ -2921,7 +2990,6 @@ function toggleTheme() {
     <img src="https://cdn.pixabay.com/photo/2025/03/27/21/03/nature-9497446_1280.png" alt="Cztery pory wiosny">
     <img src="https://cdn.pixabay.com/photo/2025/04/15/17/29/library-9535933_1280.jpg" alt="Biblioteka">
     <img src="https://cdn.pixabay.com/photo/2025/03/21/17/25/cat-9485425_1280.jpg" alt="Dwa koty">
-    <img src="https://images.deepai.org/art-image/c588b06196be4d23bdd4a4980127d374/and-below-them-as-far-as-the-eye-could-see-lay-the-gr.jpg
   </div>
 
   <h3>Kobieta</h3>
@@ -2937,9 +3005,7 @@ function toggleTheme() {
     <img src="https://images.deepai.org/art-image/b84dafc1a06f402c9c7ea6ff09699bfb/small-rectangular-painting-naive-folk-art-style-back-.jpg" alt="portret z warkoczem">
     <img src="https://images.deepai.org/art-image/c7dabc4bb37c43c5a64d7947631af549/interior-of-a-19th-century-mazovian-village-cottage-o.jpg" alt="Czytająca przy oknie">
   </div>
-    <h3>Krajobrazy</h3>
-   <img src=" https://images.deepai.org/art-image/5154fd48477f47f8a0d56ef5f6199d13/oh-great-polish-song-how-should-i-love-you-and-what-w.jpg" alt="Krajobraz 1">
-   <img src="https://images.deepai.org/art-image/c588b06196be4d23bdd4a4980127d374/and-below-them-as-far-as-the-eye-could-see-lay-the-gr.jpg" alt="Krajobraz 2">
-       </div>
+</div>
 </body>
 </html>
+
