@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pl">  
+<html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,57 +9,21 @@
 
 <meta name="description" content="Strona Adama Miks – poezja, wiersze i galeria.">
 
-<!-- FAVICON (czysta wersja) -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- FONT (aktywny – faktycznie używany) -->
+<link rel="icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
-html {
-    scroll-behavior: smooth;
-}
 
-/* =========================
-   1. GLOBAL
-========================= */
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* GLOBAL */
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
     font-size: 14px;
     line-height: 1.8;
-    letter-spacing: 0.2px;
     padding-top: 60px;
-    transition: background-color 0.3s, color 0.3s;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
 }
 
-/* =========================
-   2. TRYBY (LIGHT / DARK)
-========================= */
-
-body.light {
-    background: #f5f5f5;
-    color: #000;
-}
-
-body.dark {
-    background: #121212;
-    color: #e0e0e0;
-}
-
-/* =========================
-   3. NAWIGACJA
-========================= */
-
+/* NAWIGACJA */
 .nav {
     position: fixed;
     top: 0;
@@ -68,60 +32,22 @@ body.dark {
     padding: 12px;
     text-align: center;
     border-bottom: 3px double black;
-    z-index: 1000;
-}
-
-body.dark .nav {
-    background: #333;
-    border-color: #888;
 }
 
 .nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: inherit;
     font-weight: bold;
 }
 
-.nav a:hover {
-    text-decoration: underline;
-}
-
-body.dark .nav a {
-    color: #fff;
-}
-
-.toggle-btn {
-    margin-left: 15px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-/* =========================
-   4. SEKCJE (USUNIĘTA RAMKA)
-========================= */
-
+/* SEKCJE */
 .section {
     max-width: 800px;
     margin: 40px auto;
-    padding: 40px 50px;
-    background: transparent;   /* brak białej ramki */
-    box-shadow: none;          /* brak cienia */
+    padding: 40px;
 }
 
-.section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.section p {
-    text-align: justify;
-}
-
-/* =========================
-   5. TYTUŁ STRONY
-========================= */
-
+/* TYTUŁ */
 .title-panel {
     max-width: 800px;
     margin: 90px auto 20px;
@@ -131,288 +57,14 @@ body.dark .nav a {
     border: 4px double black;
 }
 
-body.dark .title-panel {
-    background: #444;
-    border-color: #aaa;
-}
-
-.title-panel .main-title {
-    font-size: 2.5em;
-    margin-bottom: 0.2em;
-}
-
-.title-panel .motto {
-    font-size: 1.2em;
-    font-style: italic;
-    color: #555;
-}
-
-/* =========================
-   6. WIERSZE
-========================= */
-
-.poem-container {
-    max-width: 680px;
-    margin: 60px auto;
-    padding: 10px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.poem-title {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.poem-container p {
-    text-align: left;
-    white-space: pre-line;
-    margin: 0;
-    font-variant-ligatures: common-ligatures;
-}
-
-/* =========================
-   7. AFTERWORD
-========================= */
-
-.afterword {
-    max-width: 700px;
-    margin: 40px auto;
-    text-align: justify;
-    line-height: 1.6;
-    font-size: 16px;
-}
-
-.afterword h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.afterword p {
-    margin-bottom: 1em;
-}
-
-/* =========================
-   8. RECENZJA
-========================= */
-
-.recenzja {
-    text-align: right;
-    max-width: 600px;
-    margin: 40px auto;
-    font-style: italic;
-}
-
-/* =========================
-   9. CYTAT
-========================= */
-
-.quote {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f0f0f0;
-    border-left: 4px solid #888;
-    font-style: italic;
-}
-
-/* =========================
-   10. GALERIA
-========================= */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-}
-
-.gallery img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-/* =========================
-   11. MODAL
-========================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.85);
-}
-
-.modal-content {
-    display: block;
-    margin: 5% auto;
-    max-width: 80%;
-    max-height: 80%;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-/* =========================
-   WIERSZ + TŁUMACZENIE (2 KOLUMNY)
-========================= */
-
-.poem-pair {
-    max-width: 1000px;
-    margin: 100px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-/* kolumny */
-.poem-col {
-    max-width: 100%;
-}
-
-/* tekst wiersza */
-.poem-col p {
-    white-space: pre-line;
-    text-align: left;
-}
-
-/* tytuły */
+/* WIERSZE */
 .poem-title {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* meta (tomik, tłumacz) */
-.meta {
-    margin-top: 20px;
-    font-size: 0.9em;
-    opacity: 0.7;
-}
-
-/* tłumaczenie – delikatnie inne */
-.translation {
-    opacity: 0.85;
-}
-
-/* pionowa linia między kolumnami */
-.poem-pair::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    width: 1px;
-    height: 100%;
-    background: #ccc;
-}
-
-/* potrzebne do linii */
-.poem-pair {
-    position: relative;
-}
-
-.recenzja {
-    max-width: 600px;
-    margin: 40px auto;
-    font-style: italic;
-}
-
-.text-block p {
-    text-align: justify;
-}
-
-/* podpis autora */
-.recenzja footer {
-    text-align: right;
-    margin-top: 10px;
-    font-style: normal;
-}
-
-@media (max-width: 768px) {
-
-    body {
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .section {
-        padding: 20px;
-        margin: 20px 10px;
-    }
-
-    .title-panel {
-        margin: 80px 10px 20px;
-        padding: 15px;
-    }
-
-    .poem-container {
-        padding: 10px 15px;
-    }
-
-    .poem-pair {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin: 60px 20px;
-    }
-
-    .poem-pair::before {
-        display: none;
-    }
-
-    .nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 8px;
-    }
-
-    .nav a {
-        margin: 4px;
-        font-size: 11px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
-
-    .contact-form button {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}    
-    .story {
-  white-space: pre-line;
-}
-
-  body {
-    overflow: hidden; /* KLUCZOWE */
-}
-
+/* SLIDES */
 #poems-app {
-    position: relative;
     width: 100vw;
     height: 100vh;
 }
@@ -421,20 +73,22 @@ img {
     display: none;
     height: 100vh;
     width: 100vw;
-
-    padding: 100px 40px 40px;
+    padding: 120px 40px 40px;
     box-sizing: border-box;
+    overflow-y: auto;
+}
 
-    overflow-y: auto; /* jeśli wiersz długi */
-}  
+.slide.active {
+    display: block;
+}
 
+/* MENU WIERSZY */
 #poem-menu {
     position: fixed;
     top: 80px;
     left: 10px;
     max-height: 80vh;
     overflow-y: auto;
-    z-index: 2000;
 }
 
 #poem-menu button {
@@ -442,41 +96,23 @@ img {
     margin-bottom: 5px;
     font-size: 10px;
 }
-.slide {
-    padding-top: 120px;
-}
-    <script>
-window.addEventListener("DOMContentLoaded", () => {
 
-const slides = document.querySelectorAll('#poems-app .slide');
-let current = 0;
-
-function showSlide(index) {
-  slides[current].classList.remove('active');
-  current = index;
-  slides[current].classList.add('active');
+/* FORMULARZ */
+input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
-// pokaż pierwszy slajd
-slides[current].classList.add('active');
+button {
+    padding: 10px;
+    cursor: pointer;
+}
 
-document.addEventListener('keydown', (e) => {
-
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-    if (current < slides.length - 1) showSlide(current + 1);
-  }
-
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-    if (current > 0) showSlide(current - 1);
-  }
-
-});
-
-});
-</script>
 </style>
 </head>
 
+<body>
 <!-- MENU -->
 <div class="nav">
   <a href="#o-mnie">O mnie</a>
@@ -3446,99 +3082,51 @@ function toggleTheme() {
    
 
  <script>
-      // STRZAŁKI
+window.addEventListener("DOMContentLoaded", () => {
+
+const slides = document.querySelectorAll('#poems-app .slide');
+let current = 0;
+
+function showSlide(index) {
+  slides[current].classList.remove('active');
+  current = index;
+  slides[current].classList.add('active');
+}
+
+// pierwszy slajd
+slides[current].classList.add('active');
+
+// STRZAŁKI
 document.addEventListener('keydown', (e) => {
 
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-    if (current < slides.length - 1) {
-      showSlide(current + 1);
-    }
+    if (current < slides.length - 1) showSlide(current + 1);
   }
- 
+
   if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-    if (current > 0) {
-      showSlide(current - 1);
-    }
-  }
-
-});  
-      
-</div>
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-/* =========================
-   SLIDES – DODATKOWA KONTROLA
-   (nie usuwa Twojego kodu, tylko nadpisuje logikę)
-========================= */
-
-const slides = document.querySelectorAll("#poems-app .slide");
-const menu = document.getElementById("poem-menu");
-
-if (!slides.length) return;
-
-let current = 0;
-
-/* pokaż pierwszy slajd */
-slides.forEach(s => s.classList.remove("active"));
-slides[0].classList.add("active");
-
-function showSlide(index) {
-  if (index < 0 || index >= slides.length) return;
-
-  slides[current].classList.remove("active");
-  current = index;
-  slides[current].classList.add("active");
-}
-
-/* =========================
-   STRZAŁKI (nakładka)
-========================= */
-document.addEventListener("keydown", (e) => {
-
-  if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-    showSlide(current + 1);
-  }
-
-  if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-    showSlide(current - 1);
+    if (current > 0) showSlide(current - 1);
   }
 
 });
 
-/* =========================
-   MENU POEZJI (jeśli nie istnieje – tworzy)
-========================= */
-if (menu) {
-  slides.forEach((slide, index) => {
-
-    const titleEl = slide.querySelector(".poem-title");
-    const title = titleEl ? titleEl.innerText : "Wiersz";
-
-    const btn = document.createElement("button");
-    btn.innerText = title;
-
-    btn.onclick = () => showSlide(index);
-
-    menu.appendChild(btn);
-  });
-}
-
-});
-</script>
-</body>
+// MENU
 const menu = document.getElementById('poem-menu');
 
-slides.forEach((slide, index) => {
-  const title = slide.querySelector('.poem-title').innerText;
-
+slides.forEach((slide, i) => {
   const btn = document.createElement('button');
-  btn.innerText = title;
+  btn.innerText = slide.querySelector('.poem-title').innerText;
 
-  btn.onclick = () => showSlide(index);
+  btn.onclick = () => {
+    document.querySelector('.slide.active').classList.remove('active');
+    slides[i].classList.add('active');
+    current = i;
+  };
 
   menu.appendChild(btn);
 });
-</script>       
-</html>
 
+});
+</script>
+
+</body>
+</html>
