@@ -3464,6 +3464,68 @@ document.addEventListener('keydown', (e) => {
 });  
       
 </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+/* =========================
+   SLIDES – DODATKOWA KONTROLA
+   (nie usuwa Twojego kodu, tylko nadpisuje logikę)
+========================= */
+
+const slides = document.querySelectorAll("#poems-app .slide");
+const menu = document.getElementById("poem-menu");
+
+if (!slides.length) return;
+
+let current = 0;
+
+/* pokaż pierwszy slajd */
+slides.forEach(s => s.classList.remove("active"));
+slides[0].classList.add("active");
+
+function showSlide(index) {
+  if (index < 0 || index >= slides.length) return;
+
+  slides[current].classList.remove("active");
+  current = index;
+  slides[current].classList.add("active");
+}
+
+/* =========================
+   STRZAŁKI (nakładka)
+========================= */
+document.addEventListener("keydown", (e) => {
+
+  if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+    showSlide(current + 1);
+  }
+
+  if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+    showSlide(current - 1);
+  }
+
+});
+
+/* =========================
+   MENU POEZJI (jeśli nie istnieje – tworzy)
+========================= */
+if (menu) {
+  slides.forEach((slide, index) => {
+
+    const titleEl = slide.querySelector(".poem-title");
+    const title = titleEl ? titleEl.innerText : "Wiersz";
+
+    const btn = document.createElement("button");
+    btn.innerText = title;
+
+    btn.onclick = () => showSlide(index);
+
+    menu.appendChild(btn);
+  });
+}
+
+});
+</script>
 </body>
 const menu = document.getElementById('poem-menu');
 
