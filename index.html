@@ -406,6 +406,27 @@ img {
     .story {
   white-space: pre-line;
 }
+
+  body {
+    overflow: hidden; /* KLUCZOWE */
+}
+
+#poems-app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+
+    padding: 100px 40px 40px;
+    box-sizing: border-box;
+
+    overflow-y: auto; /* jeśli wiersz długi */
+}  
 </style>
 </head>
 
