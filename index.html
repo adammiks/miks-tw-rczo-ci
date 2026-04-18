@@ -445,7 +445,35 @@ img {
 .slide {
     padding-top: 120px;
 }
-    
+    <script>
+window.addEventListener("DOMContentLoaded", () => {
+
+const slides = document.querySelectorAll('#poems-app .slide');
+let current = 0;
+
+function showSlide(index) {
+  slides[current].classList.remove('active');
+  current = index;
+  slides[current].classList.add('active');
+}
+
+// pokaż pierwszy slajd
+slides[current].classList.add('active');
+
+document.addEventListener('keydown', (e) => {
+
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+    if (current < slides.length - 1) showSlide(current + 1);
+  }
+
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    if (current > 0) showSlide(current - 1);
+  }
+
+});
+
+});
+</script>
 </style>
 </head>
 
