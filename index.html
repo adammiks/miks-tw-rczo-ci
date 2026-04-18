@@ -427,6 +427,25 @@ img {
 
     overflow-y: auto; /* jeśli wiersz długi */
 }  
+
+#poem-menu {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 2000;
+}
+
+#poem-menu button {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+.slide {
+    padding-top: 120px;
+}
+    
 </style>
 </head>
 
@@ -506,7 +525,10 @@ Adam Miks – polski poeta i bloger literacki urodzony w 1967 roku w Warszawie. 
       
 <!-- WIERSZ -->
 <!-- WIERSZE -->
-<div id="poems-app">
+<div id="poem-menu"></div>
+
+    
+    <div id="poems-app">
 
   <section class="slide active">
     <h1 class="poem-title">
@@ -3383,8 +3405,39 @@ function toggleTheme() {
     <h3>Krajobrazy</h3>
       <img src="https://raw.githubusercontent.com/adammiks/miks-tw-rczo-ci/refs/heads/main/output.jpg" alt="Krajobraz">
   </div>
+
+    // STRZAŁKI
+document.addEventListener('keydown', (e) => {
+
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+    if (current < slides.length - 1) {
+      showSlide(current + 1);
+    }
+  }
+
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    if (current > 0) {
+      showSlide(current - 1);
+    }
+  }
+
+});  
       
 </div>
 </body>
+ <script>
+const menu = document.getElementById('poem-menu');
+
+slides.forEach((slide, index) => {
+  const title = slide.querySelector('.poem-title').innerText;
+
+  const btn = document.createElement('button');
+  btn.innerText = title;
+
+  btn.onclick = () => showSlide(index);
+
+  menu.appendChild(btn);
+});
+</script>       
 </html>
 
