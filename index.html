@@ -3085,9 +3085,8 @@ function toggleTheme() {
   </div>
 
    
-
- <script>
-window.addEventListener("DOMContentLoaded", () => {
+<script>
+window.addEventListener("load", () => {
 
 const slides = document.querySelectorAll('#poems-app .slide');
 let current = 0;
@@ -3098,24 +3097,22 @@ function showSlide(index) {
   slides[current].classList.add('active');
 }
 
-// pierwszy slajd
+// pierwszy
 slides[current].classList.add('active');
 
-// STRZAŁKI
+// strzałki
 document.addEventListener('keydown', (e) => {
-
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+  if (e.key === 'ArrowRight') {
     if (current < slides.length - 1) showSlide(current + 1);
   }
-
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+  if (e.key === 'ArrowLeft') {
     if (current > 0) showSlide(current - 1);
   }
-
 });
 
-// MENU
+// menu
 const menu = document.getElementById('poem-menu');
+menu.innerHTML = ""; // 🔥 czyści stare
 
 slides.forEach((slide, i) => {
   const btn = document.createElement('button');
@@ -3132,6 +3129,3 @@ slides.forEach((slide, i) => {
 
 });
 </script>
-
-</body>
-</html>
