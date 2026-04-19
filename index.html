@@ -88,17 +88,19 @@ body {
 .slide.active {
     display: block;
 }
-
-/* UKŁAD DWÓCH KOLUMN (PL | EN) */
-.pair {
+    .pair {
     display: flex;
-    gap: 80px;
+    gap: 100px;
     align-items: flex-start;
 }
 
 .poem-col {
-    width: 50%;
+    flex: 1;
+    min-width: 0;
 }
+
+/* UKŁAD DWÓCH KOLUMN (PL | EN) */
+
 
 /* PODZIAŁ JAK W KSIĄŻCE */
 .poem-col:first-child {
