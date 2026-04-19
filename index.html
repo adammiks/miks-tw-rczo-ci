@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -47,7 +46,10 @@ body {
     padding: 40px;
 }
 
-    
+/* SZERSZA SEKCJA DLA TŁUMACZEŃ */
+#translations-en {
+    max-width: 1200px;
+}
 
 /* TYTUŁ */
 .title-panel {
@@ -65,15 +67,17 @@ body {
     margin-bottom: 20px;
 }
 
+/* APP (slajdy główne) */
 #poems-app {
     height: 100vh;
     margin-left: 220px;
 }
 
+/* SLIDE */
 .slide {
     display: none;
     height: 100vh;
-    width: 100%; /* zamiast 100vw */
+    width: 100%;
     max-width: 1200px;
     margin: auto;
     padding: 120px 40px 40px;
@@ -85,6 +89,27 @@ body {
     display: block;
 }
 
+/* UKŁAD DWÓCH KOLUMN (PL | EN) */
+.pair {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.poem-col {
+    width: 50%;
+}
+
+/* PODZIAŁ JAK W KSIĄŻCE */
+.poem-col:first-child {
+    border-right: 1px solid #999;
+    padding-right: 40px;
+}
+
+.poem-col:last-child {
+    padding-left: 40px;
+}
+
 /* MENU WIERSZY */
 #poem-menu {
     position: fixed;
@@ -92,21 +117,6 @@ body {
     left: 10px;
     max-height: 80vh;
     overflow-y: auto;
-}
-
-    .slide {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.pair {
-    display: flex;
-    gap: 80px;
-}
-
-.poem-col {
-    width: 50%;
 }
 
 #poem-menu button {
@@ -127,31 +137,12 @@ button {
     cursor: pointer;
 }
 
-  .slide p {
+/* TEKST WIERSZY */
+.slide p {
     white-space: pre-line;
     text-align: left;
-}  
-.pair {
-    align-items: flex-start;
-}
-    .pair {
-    display: flex !important;
 }
 
- .pair {
-    display: flex;
-    gap: 80px; /* było np. 40px */
-    align-items: flex-start;
-}   
-
-.poem-col:first-child {
-    border-right: 1px solid #999;
-    padding-right: 40px;
-}
-
-.poem-col:last-child {
-    padding-left: 40px;
-}    
 </style>
 </head>
 
