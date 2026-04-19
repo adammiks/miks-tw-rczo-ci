@@ -3136,19 +3136,44 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
-.slide.pair {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
+      <script>
+const slidesEN = document.querySelectorAll('#poems-app-en .slide');
+const menuEN = document.getElementById('poem-menu-en');
+
+slidesEN.forEach((slide, index) => {
+    const title = slide.querySelector('.poem-title').innerText;
+
+    const btn = document.createElement('button');
+    btn.innerText = title;
+
+    btn.onclick = () => {
+        slidesEN.forEach(s => s.classList.remove('active'));
+        slide.classList.add('active');
+    };
+
+    menuEN.appendChild(btn);
+});
+</script>
+.pair {
+    display: flex;
+    gap: 40px;
 }
 
 .poem-col {
-  flex: 1;
-  min-width: 0;
-  display: block;
+    width: 50%;
 }
 
+.poem-col p {
+    white-space: pre-line;
+}
 
+#poem-menu-en {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
 
 
 </body>
