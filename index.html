@@ -24,6 +24,9 @@ body {
     line-height: 1.8;
     padding-top: 60px;
 }
+    body {
+    overflow-x: hidden;
+}
 
 /* NAWIGACJA */
 .nav {
@@ -74,16 +77,16 @@ body {
 /* =========================
    SLIDE SYSTEM (NAPRAWIONY)
    ========================= */
-
 .slide {
-    display: none;
+    display: block;
     width: 100%;
     max-width: 1200px;
     margin: auto;
     padding: 120px 40px 40px;
     box-sizing: border-box;
-    overflow-y: visible;
 }
+
+
 
 /* aktywny slajd (główne wiersze) */
 .slide.active {
@@ -146,7 +149,7 @@ body {
     top: 80px;
     left: 10px;
     max-height: 80vh;
-    overflow-y: auto;
+   
 }
 
 #poem-menu button {
