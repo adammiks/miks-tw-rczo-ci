@@ -78,12 +78,16 @@ body {
    SLIDE SYSTEM (NAPRAWIONY)
    ========================= */
 .slide {
-    display: block;
+    display: none;
     width: 100%;
     max-width: 1200px;
     margin: auto;
     padding: 120px 40px 40px;
     box-sizing: border-box;
+}
+
+.slide.active {
+    display: block;
 }
 
 
@@ -169,7 +173,9 @@ button {
     padding: 10px;
     cursor: pointer;
 }
-
+body {
+    overflow-x: hidden;
+}
 </style>
 </head>
 
