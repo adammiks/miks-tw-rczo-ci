@@ -3127,3 +3127,25 @@ slides.forEach((slide, i) => {
 
 });
 </script>
+  </section>
+
+</div> <!-- poems-app -->
+
+<script>
+window.addEventListener('scroll', () => {
+  const poems = document.getElementById('poems-app');
+  const menu = document.getElementById('poem-menu');
+
+  const rect = poems.getBoundingClientRect();
+
+  if (rect.top <= 0 && rect.bottom >= 200) {
+    menu.style.display = 'block';
+  } else {
+    menu.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
+      
