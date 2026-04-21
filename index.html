@@ -86,8 +86,12 @@ body {
     box-sizing: border-box;
 }
 
-.slide.active {
-    display: block;
+.slide:first-of-type {
+  display: block;
+}
+
+.slide:target {
+  display: block;
 }
 
 
@@ -423,7 +427,7 @@ Adam Miks – polski poeta i bloger literacki urodzony w 1967 roku w Warszawie. 
 
 
   
-<section class="slide active" id="wiersz1">
+<section class="slide" id="wiersz1">
   <h1 class="poem-title">WSTAJĘ, SIÓDMA RANO</h1>
 
 
@@ -535,7 +539,7 @@ umarł las w złocie
   </p>
 </section>
 
-<section class="slide" id="wiersz7">
+<section class="slide" id="wiersz8">
   <h1 class="poem-title">
 ODECHY POETY</h1>
   <p>
