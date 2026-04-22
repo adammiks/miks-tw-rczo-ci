@@ -103,13 +103,21 @@ body {
   gap: 40px;
   align-items: flex-start;
 }
-
+.pair {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  justify-content: center; /* 🔥 TO CENTRUJE */
+}
 /* kolumny */
 .poem-col {
   flex: 1;
   min-width: 0;
 }
-
+.poem-col {
+  flex: 1;
+  max-width: 500px;
+}
 /* opcjonalny podział wizualny */
 .poem-col:first-child {
   border-right: 1px solid #999;
