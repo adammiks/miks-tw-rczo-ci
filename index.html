@@ -111,20 +111,11 @@ body {
     align-items: flex-start;
 }
 
-.poem-col {
-    flex: 1;
-    min-width: 350px;
-}
 
-/* podział PL / EN */
-.poem-col:first-child {
-    border-right: 1px solid #999;
-    padding-right: 40px; 
-}
 
-.poem-col:last-child {
-    padding-left: 40px;
-}
+
+
+
 
 /* =========================
    TEKST WIERSZY
@@ -313,7 +304,22 @@ section {
   gap: 40px; /* odstęp między kolumnami */
 }
 
+.slide.active {
+  display: block;
+}
 
+/* 🔥 POPRAWNY FLEX */
+.pair {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* 🔥 KLUCZ DO DZIAŁANIA */
+.poem-col {
+  flex: 1;
+  min-width: 0;
+}
 
 
 .slide.active {
@@ -321,9 +327,13 @@ section {
 }
 
 /* 🔥 TO MUSI BYĆ TAK */
-.pair {
-  display: flex;
-  gap: 40px;
+.slide {
+  display: none;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 40px 40px;
+  box-sizing: border-box;
 }
 
 .poem-col {
