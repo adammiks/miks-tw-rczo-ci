@@ -75,7 +75,7 @@ body {
 }
 
 /* =========================
-   SLIDES (POPRAWIONE)
+   SLIDES
 ========================= */
 
 .slide {
@@ -87,15 +87,16 @@ body {
   box-sizing: border-box;
 }
 
-.slide.active {
-  display: block; 
+.slide:first-of-type {
+  display: block;
 }
-/* kliknięcie linku */
+
 .slide:target {
   display: block;
 }
+
 /* =========================
-   FLEX DWUKOLUMNOWY (KLUCZ)
+   DWUKOLUMNOWY UKŁAD (GLOBALNY)
 ========================= */
 
 .pair {
@@ -103,22 +104,13 @@ body {
   gap: 40px;
   align-items: flex-start;
 }
-.pair {
-  display: flex;
-  gap: 60px;
-  align-items: flex-start;
-  justify-content: center; /* 🔥 TO CENTRUJE */
-}
-/* kolumny */
+
 .poem-col {
   flex: 1;
   min-width: 0;
 }
-.poem-col {
-  flex: 1;
-  max-width: 500px;
-}
-/* opcjonalny podział wizualny */
+
+/* separator */
 .poem-col:first-child {
   border-right: 1px solid #999;
   padding-right: 40px;
@@ -129,30 +121,41 @@ body {
 }
 
 /* =========================
-   TEKST WIERSZY
+   TŁUMACZENIA (TYLKO TA SEKCJA!)
+========================= */
+
+#translations-en {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* tylko tutaj zmieniamy wygląd kolumn */
+#translations-en .pair {
+  justify-content: center;
+  gap: 80px;
+}
+
+#translations-en .poem-col {
+  flex: 0 1 450px;
+  max-width: 450px;
+}
+
+/* 🔥 USUNIĘTY CHAOS:
+.translations { display:flex }  → NIE POTRZEBNE
+*/
+
+/* =========================
+   TEKST
 ========================= */
 
 .slide p {
   white-space: pre-line;
   text-align: left;
+  line-height: 2;
 }
 
 /* =========================
-   TŁUMACZENIA
-========================= */
-
-.translations {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.translations .poem {
-  flex: 1 1 300px;
-}
-
-/* =========================
-   MENU WIERSZY
+   MENU / FORM
 ========================= */
 
 #poem-menu button {
@@ -161,10 +164,6 @@ body {
   padding: 3px 5px;
   font-size: 9px;
 }
-
-/* =========================
-   FORM
-========================= */
 
 input, textarea {
   width: 100%;
@@ -214,7 +213,7 @@ button {
 }
 
 /* =========================
-   SCROLL
+   SCROLL + DEKORACJE
 ========================= */
 
 html {
@@ -224,10 +223,6 @@ html {
 section {
   scroll-margin-top: 80px;
 }
-
-/* =========================
-   DEKORACJE
-========================= */
 
 .section-divider {
   margin: 140px 0;
@@ -259,17 +254,6 @@ section {
   text-indent: 1.5em;
   margin-bottom: 0;
 }
-
-#translations-en .pair {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-}
-
-#translations-en .poem-col {
-  flex: 0 1 450px;
-  max-width: 450px;
-}   
 
 </style>
 </head>
