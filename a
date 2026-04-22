@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Niewydane tomiki</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  background: #0e0e10;
+  color: #f2f2f2;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+header p {
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+.slider {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  min-height: 420px;
+}
+
+.slide {
+  display: none;
+  animation: fade 0.6s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tomik-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #d6d6d6;
+  letter-spacing: 2px;
+}
+
+.poem-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+pre {
+  font-family: 'Playfair Display', serif;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-size: 18px;
+  color: #e8e8e8;
+  margin: 0;
+}
+
+.controls {
+  text-align: center;
+  margin: 20px 0 60px;
+}
+
+button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 10px 16px;
+  margin: 0 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+footer {
+  text-align: center;
+  opacity: 0.4;
+  font-size: 12px;
+  padding-bottom: 30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Niewydane tomiki</h1>
+  <p>poezja – stadium przejściowe między ciszą a ruchem</p>
+</header>
+
+<div class="slider">
+
+  <div class="slide active">
+    <div class="tomik-title">ZE STADIONÓW ŚWIATA</div>
+
+    <div class="poem-title">BIEGACZ</div>
+    <pre>dokąd wyskakuję jako biegacz z wazy
+
+maraton jest małą archeologiczną wioską
+żadnej bitwy ni drogowskazu
+filippides zasnął pod swoim pomnikiem
+nie potrzebny władcy ani nikomu więcej
+
+zwłaszcza że waza przechowywana w muzeum
+a ja
+mam powidoki uruchomione
+przez zwykłą kolej wyobraźni
+
+nawet tu
+na kartoflisku
+przy łagodnym strumieniu dymu</pre>
+  </div>
+
+  <div class="slide">
+    <div class="poem-title">MINUTA ZEROWA MECZU</div>
+    <pre>hymn narodowy
+zerowa minuta meczu piłkarskiego
+
+wymiana proporczyków
+gwizdek i siła pierwszego uderzenia
+
+kibice tworzą dach oklasków nad polską reprezentacją
+
+szum medialny zamieni się z szumem stadionu
+
+za chwilę minie
+kilkanaście sekund wiersza - komentarza
+
+wynik spotkania nie zmienił się na
+gwizdek sędziego i dyskusje obu trenerów
+
+sponsor zamknął oczy na rzut wolny
+
+ulga</pre>
+  </div>
+
+  <div class="slide">
+    <div class="poem-title">W GŁĘBINIE</div>
+    <pre>na palcu
+zakręciła się obrączka
+
+włączyłem telewizor
+za oknem zima i igrzyska olimpijskie
+łyżwiarka figurowa wkręca w lód piruet
+położyłem zaschnięty kwiat róży
+w głębinie wózka inwalidzkiego
+
+okręcę go 
+wokół małego palca 
+tylko dwa razy
+niech to będzie 
+program obowiązkowy
+
+telewizor
+na wszelki wypadek zasłoniłem 
+niepamięcią retransmisji
+
+nie lubię porównań
+między niepełnosprawnością a mistrzynią świata</pre>
+  </div>
+
+  <div class="slide">
+    <div class="poem-title">DWIE ŁUCZNICZKI</div>
+    <pre>Szpilka rwie tunel lokówki
+Strzała mknie ku tarczy
+Dwie łuczniczki</pre>
+  </div>
+
+  <div class="slide">
+    <div class="poem-title">PROWOKACJA</div>
+    <pre>piąta rano w Warszawie
+klaszczemy liniami papilarnymi 
+nie budzimy sąsiadów
+(aczkolwiek szczekanie psa Mopsa
+powinniśmy zignorować)
+
+i jednocześnie tworzymy falę dźwięku
+sprowokujemy tym zamieszaniem bramkę dla Tajwanu
+na 1:12</pre>
+  </div>
+
+  <div class="slide">
+    <div class="poem-title">KOMBINEZON KOSMONAUTY</div>
+    <pre>rysy twarzy przecinają sieć połączeń wi-fi
+komórki rąk i nóg
+zanurzasz w linii życia elektrokardiogramu
+z tułowia zbierzesz 
+lustrzane odbicie 
+westchnień domysłów beknięć 
+
+nie dogoni cię nawet Usain Bolt 
+biegacz w kombinezonie kosmonauty</pre>
+  </div>
+
+  <div class="slide">
+    <div class="poem-title">TRENING</div>
+    <pre>muskuły zwinęły się w kłębek odpoczynku 
+przez dwie godziny były drapieżne 
+pazurem wyspanego lwa 
+teraz 
+ledwo dźwigają puch oddechów</pre>
+  </div>
+
+  <div class="slide">
+    <div class="poem-title">PODANIE</div>
+    <pre>suknie kobiet, białe koszule i wspaniałe krawaty mężczyzn widać 
+w kawiarniach i na stadionie
+
+a jednak na płytę boiska wyskakuje trener w dresie
+
+szczęsne pobrzękiwanie niestrzelonej bramki w głosie komentatora:
+Jezus Maria
+
+sponsorem meczu powinna zostać tak zwana laga</pre>
+  </div>
+
+</div>
+
+<div class="controls">
+  <button onclick="prevSlide()">◀</button>
+  <button onclick="nextSlide()">▶</button>
+</div>
+
+<footer>
+  © poetycka prezentacja – tryb slajdowy
+</footer>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+function show(i) {
+  slides.forEach(s => s.classList.remove('active'));
+  slides[i].classList.add('active');
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  show(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + slides.length) % slides.length;
+  show(current);
+}
+
+show(current);
+</script>
+
+</body>
+</html>
+a
