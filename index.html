@@ -1,5 +1,5 @@
- <!DOCTYPE html>
-<html lang="pl">  
+<!DOCTYPE html>
+<html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,125 +11,124 @@
 <link rel="icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-
-
-
 <style>
 
-/* GLOBAL */
+/* =========================
+   GLOBAL
+========================= */
+
 body {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    line-height: 1.8;
-    padding-top: 60px;
-}
-    body {
-    overflow-x: hidden;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  line-height: 1.8;
+  padding-top: 60px;
+  overflow-x: hidden;
 }
 
-/* NAWIGACJA */
+/* =========================
+   NAWIGACJA
+========================= */
+
 .nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #d2b48c;
-    padding: 12px;
-    text-align: center;
-    border-bottom: 3px double black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #d2b48c;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 3px double black;
 }
 
 .nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* SEKCJE */
+/* =========================
+   SEKCJE
+========================= */
+
 .section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
 }
 
-/* TŁUMACZENIA */
+/* =========================
+   TYTUŁ
+========================= */
 
-    
-
-#translations-en {
-    max-width: 1400px;
-}
-/* TYTUŁ */
 .title-panel {
-    max-width: 800px;
-    margin: 90px auto 20px;
-    padding: 25px;
-    text-align: center;
-    background: #d2b48c;
-    border: 4px double black;
+  max-width: 800px;
+  margin: 90px auto 20px;
+  padding: 25px;
+  text-align: center;
+  background: #d2b48c;
+  border: 4px double black;
 }
 
 .poem-title {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* =========================
-   SLIDE SYSTEM (NAPRAWIONY)
-   ========================= */
+   SLIDES (POPRAWIONE)
+========================= */
+
 .slide {
-    display: none;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 120px 40px 40px;
-    box-sizing: border-box;
+  display: none;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 40px 40px;
+  box-sizing: border-box;
 }
 
-.slide:first-of-type {
-  display: block;
-}
-
-.slide:target {
-  display: block;
-}
-
-
-
-/* aktywny slajd (główne wiersze) */
 .slide.active {
-    display: block;
+  display: block;
 }
 
 /* =========================
-   UKŁAD DWUKOLUMNOWY
-   ========================= */
+   FLEX DWUKOLUMNOWY (KLUCZ)
+========================= */
 
 .pair {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
 
+/* kolumny */
+.poem-col {
+  flex: 1;
+  min-width: 0;
+}
 
+/* opcjonalny podział wizualny */
+.poem-col:first-child {
+  border-right: 1px solid #999;
+  padding-right: 40px;
+}
 
-
-
-
+.poem-col:last-child {
+  padding-left: 40px;
+}
 
 /* =========================
    TEKST WIERSZY
-   ========================= */
+========================= */
 
 .slide p {
-    white-space: pre-line;
-    text-align: left;
+  white-space: pre-line;
+  text-align: left;
 }
 
 /* =========================
-   WYJĄTEK: TŁUMACZENIA
-   (żeby flex działał zawsze)
-   ========================= */
+   TŁUMACZENIA
+========================= */
 
 .translations {
   display: flex;
@@ -137,43 +136,41 @@ body {
   flex-wrap: wrap;
 }
 
-#translations-en .pair {
-    display: flex;
-}
-
-
 .translations .poem {
   flex: 1 1 300px;
 }
 
 /* =========================
    MENU WIERSZY
-   ========================= */
-
-
+========================= */
 
 #poem-menu button {
-    width: 100%;
-    margin-bottom: 3px;
-    padding: 3px 5px;
-    font-size: 9px;
+  width: 100%;
+  margin-bottom: 3px;
+  padding: 3px 5px;
+  font-size: 9px;
 }
 
-/* FORM */
+/* =========================
+   FORM
+========================= */
+
 input, textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 button {
-    padding: 10px;
-    cursor: pointer;
+  padding: 10px;
+  cursor: pointer;
 }
-body {
-    overflow-x: hidden;
-}
-  .collection {
+
+/* =========================
+   SPIS TREŚCI
+========================= */
+
+.collection {
   margin-bottom: 80px;
   padding-top: 20px;
 }
@@ -203,7 +200,12 @@ body {
 .collection .toc a:hover {
   background: black;
   color: white;
-}  
+}
+
+/* =========================
+   SCROLL
+========================= */
+
 html {
   scroll-behavior: smooth;
 }
@@ -211,6 +213,10 @@ html {
 section {
   scroll-margin-top: 80px;
 }
+
+/* =========================
+   DEKORACJE
+========================= */
 
 .section-divider {
   margin: 140px 0;
@@ -233,114 +239,16 @@ section {
   opacity: 0.7;
 }
 
-.toc-book {
-  max-width: 500px;
-  margin: 60px 0 80px 0;
-  padding-left: 20px;
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
-  opacity: 0.85;
-}
+/* =========================
+   AFTERWORD
+========================= */
 
-.toc-title {
-  font-style: italic;
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-.toc-book ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.toc-book li {
-  margin: 8px 0;
-}
-
-.toc-book a {
-  text-decoration: none;
-  color: #222;
-  position: relative;
-  transition: 0.3s;
-}
-
-/* subtelne „podkreślenie tuszem” */
-.toc-book a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 1px;
-  background: #444;
-  transition: width 0.3s ease;
-}
-
-.toc-book a:hover::after {
-  width: 100%;
-}
-
-.toc-book a:hover {
-  color: #000;
-}  
-
-
- .afterword p {
+.afterword p {
   text-align: justify;
-  text-indent: 1.5em;   /* wcięcie pierwszej linii */
-  margin-bottom: 0;     /* usuwa duże odstępy między akapitami */
-}
-    .slide {
-  display: none;
+  text-indent: 1.5em;
+  margin-bottom: 0;
 }
 
-.slide.active {
-  display: block;
-}
-
- .pair {
-  display: flex;
-  gap: 40px; /* odstęp między kolumnami */
-}
-
-.slide.active {
-  display: block;
-}
-
-/* 🔥 POPRAWNY FLEX */
-.pair {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-/* 🔥 KLUCZ DO DZIAŁANIA */
-.poem-col {
-  flex: 1;
-  min-width: 0;
-}
-
-
-.slide.active {
-  display: block;
-}
-
-/* 🔥 TO MUSI BYĆ TAK */
-.slide {
-  display: none;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 120px 40px 40px;
-  box-sizing: border-box;
-}
-
-.poem-col {
-  flex: 1;
-  min-width: 0;
-}
- 
 </style>
 </head>
 
