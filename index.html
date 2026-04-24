@@ -51,9 +51,9 @@ body {
 ========================= */
 
 .section {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 40px;
+  max-width: 650px;
+  margin: 120px auto;
+  padding: 0 20px;
 }
 
 /* =========================
@@ -148,9 +148,8 @@ body {
 ========================= */
 
 .slide p {
-  white-space: pre-line;
-  text-align: left;
-  line-height: 2;
+  line-height: 1.9;
+  margin-bottom: 50px;
 }
 
 /* =========================
@@ -310,6 +309,26 @@ section {
   margin: 160px auto 120px;
   padding: 80px 40px;
 }	
+.section h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+	
+.section h2::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #333;
+  margin: 0 auto 20px;
+}
+.nav {
+  background: #e8dcc7;
+}
+	.section {
+  opacity: 0.95;
+}
 </style>
 </head>
 
@@ -2473,17 +2492,22 @@ slidesEN.forEach((slide, index) => {
     menuEN.appendChild(btn);
 });
 </script>
+
 .pair {
-    display: flex;
-    gap: 40px;
-      align-items: flex-start;
-
+  display: flex;
+  gap: 60px;
 }
-
 .poem-col {
     width: 50%;
 }
 
+.poem-col {
+  line-height: 1.9;
+}
+	  
+.poem {
+  margin-bottom: 70px;
+}
 .poem-col p {
     white-space: pre-line;
 }
