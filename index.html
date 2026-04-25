@@ -451,7 +451,24 @@ section {
   box-shadow: none !important;
   outline: none !important;
 }
-	
+	.nav {
+  background: #fff !important;
+
+  border: none !important;
+  border-bottom: none !important;
+
+  box-shadow: none !important;
+  outline: none !important;
+
+  background-image: none !important;
+}
+
+/* usuwa pseudo-elementy, które często udają linię */
+.nav::before,
+.nav::after {
+  content: none !important;
+  display: none !important;
+}
 </style>
 </head>
 
