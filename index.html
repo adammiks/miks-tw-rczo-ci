@@ -2497,257 +2497,185 @@ closeBtn.onclick = function() {
   modal.style.display = "none";
 }
 
-window.onclick = function(e) {
-  if (e.target == modal) {
-    modal.style.display = "none";
-  }
+<!-- ========== STYLE ========== -->
+<style>
+.pair {
+  display: flex;
+  gap: 60px;
 }
-<script>
-document.addEventListener("DOMContentLoaded", () => {
 
-  const slides = document.querySelectorAll(".slide");
+.poem-col {
+  width: 50%;
+  line-height: 1.9;
+}
 
-  function show(id) {
-    slides.forEach(s => s.classList.remove("active"));
-    const target = document.getElementById(id);
-    if (target) {
-      target.classList.add("active");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }
+.poem {
+  margin-bottom: 70px;
+}
 
-  // przechwytujemy kliknięcia w menu
-  document.querySelectorAll(".toc-book a").forEach(link => {
-    link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
+.poem-col p {
+  white-space: pre-line;
+}
 
-      if (href && href.startsWith("#")) {
-        e.preventDefault();
-        const id = href.replace("#", "");
-        show(id);
-      }
-    });
-  });
+#poem-menu-en {
+  position: fixed;
+  top: 80px;
+  left: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+</style>
 
-});
-</script>
-<!-- STOPKA -->
-
+<!-- ========== THEME TOGGLE ========== -->
 <script>
 function toggleTheme() {
-    document.body.classList.toggle("dark");
-    document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
 }
 </script>
+
+<!-- ========== PORTFOLIO ========== -->
 <div class="section" id="portfolio">
   <h2>Portfolio AI</h2>
 
   <p style="text-align:center; max-width:600px; margin:auto;">
-    Obrazy powstałe z dialogu między słowem a algorytmem. 
-    Każdy z nich to próba uchwycenia nastroju, chwili lub metafory.
+    Obrazy powstałe z dialogu między słowem a algorytmem.
   </p>
-  <h3>Autor<h3>
-  <img src="https://wfw.com.pl/media/filer_public_thumbnails/filer_public/51/f9/51f980a2-cd59-485c-ab64-9ac9dfcf2c08/adam_miks.jpg__480x0_q85_subsampling-2.jpg" alt="Adam Miks"width="100" height="100"> >
+
+  <h3>Autor</h3>
+  <img src="https://wfw.com.pl/media/filer_public_thumbnails/filer_public/51/f9/51f980a2-cd59-485c-ab64-9ac9dfcf2c08/adam_miks.jpg__480x0_q85_subsampling-2.jpg"
+       alt="Adam Miks" width="100" height="100">
+
   <h3>Pierwsze próby</h3>
   <div class="gallery">
-    <img src="https://cdn.pixabay.com/photo/2025/04/25/20/18/ex-libris-9559971_1280.jpg" alt="Ex Libris">
-    <img src="https://cdn.pixabay.com/photo/2025/03/18/18/43/girl-9478914_1280.jpg" alt="Polka">
-    <img src="https://cdn.pixabay.com/photo/2025/03/28/21/26/flower-9499636_1280.png" alt="Kapelusz - kwiat">
-    <img src="https://cdn.pixabay.com/photo/2025/04/21/19/02/landscape-9548337_1280.jpg" alt="Książka zimą">
-    <img src="https://cdn.pixabay.com/photo/2025/03/31/09/35/coffee-9504346_1280.jpg" alt="Drzewo nad filiżanką">
-    <img src="https://cdn.pixabay.com/photo/2025/03/31/09/48/cigarette-9504367_1280.png" alt="Paląca zapałka">
-    <img src="https://cdn.pixabay.com/photo/2025/03/29/19/22/cup-9501527_1280.jpg" alt="Pragnienie">
-    <img src="https://cdn.pixabay.com/photo/2025/03/27/21/03/nature-9497446_1280.png" alt="Cztery pory wiosny">
-    <img src="https://cdn.pixabay.com/photo/2025/04/15/17/29/library-9535933_1280.jpg" alt="Biblioteka">
-    <img src="https://cdn.pixabay.com/photo/2025/03/21/17/25/cat-9485425_1280.jpg" alt="Dwa koty">
+    <img src="https://cdn.pixabay.com/photo/2025/04/25/20/18/ex-libris-9559971_1280.jpg" alt="">
+    <img src="https://cdn.pixabay.com/photo/2025/03/18/18/43/girl-9478914_1280.jpg" alt="">
+    <img src="https://cdn.pixabay.com/photo/2025/03/28/21/26/flower-9499636_1280.png" alt="">
   </div>
 
   <h3>Kobieta</h3>
   <div class="gallery">
-    <img src="https://cdn.pixabay.com/photo/2025/04/05/17/32/girl-9515604_1280.jpg" alt="Przy oknie">
-    <img src="https://cdn.pixabay.com/photo/2025/04/29/20/18/woman-9567868_1280.jpg" alt="Nieśmiała">
-    <img src="https://cdn.pixabay.com/photo/2025/03/27/19/04/spring-9497247_1280.jpg" alt="Przedwiośnie">
-    <img src="https://cdn.pixabay.com/photo/2026/04/08/14/09/adamczytacz-girl-10215853_1280.jpg" alt="Anioł stróż">
-    <img src="https://images.deepai.org/art-image/eef2b131d4d24c6785adefe50d95016c/spotting-a-bench-he-noticed-a-woman-walking-twenty-pa.jpg" alt="Spacer">
-    <img src="https://cdn.pixabay.com/photo/2025/03/21/16/57/the-little-girl-9485351_1280.jpg" alt="Nagrobek wiosny">
-    <img src="https://images.deepai.org/art-image/49504bd423fc41f0b4ac552e77513f09/an-abstract-female-silhouette-suggested-through-light.jpg" alt="a la Dali">
-    <img src="https://images.deepai.org/art-image/ecf0fe1b6df444e3856c9d522bad3fc1/dark-silhouette-of-woman-dissolving-in-abstract-swirl.jpg" alt="z atramentu powstałaś">
-    <img src="https://images.deepai.org/art-image/b84dafc1a06f402c9c7ea6ff09699bfb/small-rectangular-painting-naive-folk-art-style-back-.jpg" alt="portret z warkoczem">
-    <img src="https://images.deepai.org/art-image/c7dabc4bb37c43c5a64d7947631af549/interior-of-a-19th-century-mazovian-village-cottage-o.jpg" alt="Czytająca przy oknie">
-    <h3>Krajobrazy</h3>
-      <img src="https://raw.githubusercontent.com/adammiks/miks-tw-rczo-ci/refs/heads/main/output.jpg" alt="Krajobraz">
+    <img src="https://cdn.pixabay.com/photo/2025/04/05/17/32/girl-9515604_1280.jpg" alt="">
+    <img src="https://cdn.pixabay.com/photo/2025/04/29/20/18/woman-9567868_1280.jpg" alt="">
   </div>
 
-   
+  <h3>Krajobrazy</h3>
+  <img src="https://raw.githubusercontent.com/adammiks/miks-tw-rczo-ci/refs/heads/main/output.jpg" alt="">
+</div>
+
+<!-- ========== SLIDES (WIERSZE) ========== -->
 <script>
 window.addEventListener("load", () => {
+  const slides = document.querySelectorAll('#poems-app .slide');
+  let current = 0;
 
-const slides = document.querySelectorAll('#poems-app .slide');
-let current = 0;
-
-function showSlide(index) {
-  slides[current].classList.remove('active');
-  current = index;
-  slides[current].classList.add('active');
-}
-
-// pierwszy
-slides[current].classList.add('active');
-
-// strzałki
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') {
-    if (current < slides.length - 1) showSlide(current + 1);
+  function showSlide(index) {
+    if (!slides.length) return;
+    slides[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
   }
-  if (e.key === 'ArrowLeft') {
-    if (current > 0) showSlide(current - 1);
+
+  if (slides.length) {
+    slides[current].classList.add('active');
   }
-});
 
-// menu
-const menu = document.getElementById('poem-menu');
-menu.innerHTML = ""; // 🔥 czyści stare
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && current < slides.length - 1) {
+      showSlide(current + 1);
+    }
+    if (e.key === 'ArrowLeft' && current > 0) {
+      showSlide(current - 1);
+    }
+  });
 
-slides.forEach((slide, i) => {
-  const btn = document.createElement('button');
-  btn.innerText = slide.querySelector('.poem-title').innerText;
-
-  btn.onclick = () => {
-    document.querySelector('.slide.active').classList.remove('active');
-    slides[i].classList.add('active');
-    current = i;
-  };
-
-  menu.appendChild(btn);
-});
-
-});
-</script>
-  </section>
-
-</div> <!-- poems-app -->
-
-
-
-     </section>
-
-</div> <!-- poems-app -->
-
-<script>
-window.addEventListener('scroll', () => {
-  const poems = document.getElementById('poems-app');
   const menu = document.getElementById('poem-menu');
+  if (menu) {
+    menu.innerHTML = "";
 
-  const rect = poems.getBoundingClientRect();
+    slides.forEach((slide, i) => {
+      const btn = document.createElement('button');
+      const title = slide.querySelector('.poem-title');
+      btn.innerText = title ? title.innerText : "Untitled";
 
-  if (rect.top <= 0 && rect.bottom >= 200) {
-    menu.style.display = 'block';
-  } else {
-    menu.style.display = 'none';
+      btn.onclick = () => {
+        document.querySelector('.slide.active')?.classList.remove('active');
+        slides[i].classList.add('active');
+        current = i;
+      };
+
+      menu.appendChild(btn);
+    });
   }
 });
 </script>
-      <script>
-const slidesEN = document.querySelectorAll('#poems-app-en .slide');
-const menuEN = document.getElementById('poem-menu-en');
 
-slidesEN.forEach((slide, index) => {
-    const title = slide.querySelector('.poem-title').innerText;
+<!-- ========== ENGLISH MENU ========== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slidesEN = document.querySelectorAll('#poems-app-en .slide');
+  const menuEN = document.getElementById('poem-menu-en');
+
+  if (!menuEN) return;
+
+  slidesEN.forEach((slide) => {
+    const title = slide.querySelector('.poem-title')?.innerText || "Poem";
 
     const btn = document.createElement('button');
     btn.innerText = title;
 
     btn.onclick = () => {
-        slidesEN.forEach(s => s.classList.remove('active'));
-        slide.classList.add('active');
+      slidesEN.forEach(s => s.classList.remove('active'));
+      slide.classList.add('active');
     };
 
     menuEN.appendChild(btn);
+  });
 });
 </script>
-<script>
-const btn = document.getElementById("scrollTopBtn");
 
-window.onscroll = function () {
-  btn.style.display = window.scrollY > 300 ? "block" : "none";
-};
-
-btn.onclick = function () {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
-</script>
-.pair {
-  display: flex;
-  gap: 60px;
-}
-.poem-col {
-    width: 50%;
-}
-
-.poem-col {
-  line-height: 1.9;
-}
-	  
-.poem {
-  margin-bottom: 70px;
-}
-.poem-col p {
-    white-space: pre-line;
-}
-
-#poem-menu-en {
-    position: fixed;
-    top: 80px;
-    left: 10px;
-    max-height: 80vh;
-    overflow-y: auto;
-}
+<!-- ========== SCROLL TOP (JEDEN PRZYCISK!) ========== -->
 <button id="scrollTopBtn">⬆</button>
 
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("scrollTopBtn");
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
-  btn.addEventListener("click", function () {
+  btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const wiersze = document.querySelectorAll("p"); // ← zmienimy jeśli trzeba
 
-  wiersze.forEach(wiersz => {
+<!-- ========== INLINE BACK TO TOP ========== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("p").forEach(p => {
     const link = document.createElement("a");
     link.href = "#top";
     link.textContent = " ⬆";
     link.className = "back-to-top-inline";
-
-    wiersz.appendChild(link);
+    p.appendChild(link);
   });
 });
-</script>	  
+</script>
+
+<!-- ========== FOOTER ========== -->
 <footer class="footer-menu">
   <div class="nav">
     <a href="#o-mnie">O mnie</a>
     <a href="#kontakt">Kontakt</a>
-    <a href="#wydany">Z krajobrazów poety</a>
-    <a href="#tomik-1">Ze stadionów świata</a>
-    <a href="#tomik-2">Dzień dobry, do widzenia i spacery między</a>
-    <a href="#opowiadania">Opowiadania</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#ksiazki">Ulubione książki</a>
   </div>
 </footer>
+
 </body>
 </html>
   
