@@ -29,24 +29,58 @@ body {
 /* =========================
    NAWIGACJA
 ========================= */
+/* ===== MENU – styl książkowy ===== */
 
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #d2b48c;
-  padding: 12px;
+  background: #f5efe6; /* papier */
+  padding: 14px 10px;
   text-align: center;
-  border-bottom: 3px solid black;
+
+  border: none;
+  box-shadow: none;
+}
+
+.nav a {
+  position: relative;
+  margin: 0 14px;
+  text-decoration: none;
+  color: #2c2c2c;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  transition: color 0.3s ease;
+}
+
+/* cienka linia (ukryta) */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #2c2c2c;
+
+  transition: width 0.3s ease;
+}
+
+/* hover efekt */
+.nav a:hover {
+  color: #000;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
 }
 .collection .toc {
   border-bottom: none;
 }
-.nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
+
 
 /* =========================
    SEKCJE
