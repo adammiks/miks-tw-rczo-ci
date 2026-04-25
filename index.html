@@ -31,25 +31,51 @@ body {
 ========================= */
 /* ===== MENU – styl książkowy ===== */
 
+/* ===== MENU – minimalistyczne, książkowe ===== */
+
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #f5efe6; /* papier */
-  padding: 14px 10px;
+  background: #ffffff;
+  padding: 16px 10px;
   text-align: center;
 
   border: none;
   box-shadow: none;
 }
 
+/* linki */
 .nav a {
   position: relative;
-  margin: 0 14px;
+  margin: 0 16px;
   text-decoration: none;
-  color: #2c2c2c;
-  font-weight: 500;
+  color: #111;
+  font-weight: 400;
   letter-spacing: 0.5px;
+
+  transition: color 0.3s ease;
+}
+
+/* cienka linia (ukryta) */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+
+  width: 0%;
+  height: 1px;
+  background: #111;
+
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.nav a:hover::after {
+  width: 100%;
+}
 
   transition: color 0.3s ease;
 }
