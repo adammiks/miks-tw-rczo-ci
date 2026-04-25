@@ -352,6 +352,17 @@ section {
   cursor: pointer;
   z-index: 9999;
 }
+
+.back-to-top-inline {
+  margin-left: 10px;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #888;
+}
+
+.back-to-top-inline:hover {
+  color: #000;
+}	
 </style>
 </style>
 </head>
@@ -2725,7 +2736,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-	  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const wiersze = document.querySelectorAll("p"); // ← zmienimy jeśli trzeba
+
+  wiersze.forEach(wiersz => {
+    const link = document.createElement("a");
+    link.href = "#top";
+    link.textContent = " ⬆";
+    link.className = "back-to-top-inline";
+
+    wiersz.appendChild(link);
+  });
+});
+</script>	  
 
 </body>
 </html>
