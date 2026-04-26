@@ -43,9 +43,7 @@ body {
 
 
 
-.collection .toc {
-  border-bottom: none;
-}
+
 
 
 /* =========================
@@ -411,8 +409,16 @@ section {
 .nav a:hover::after {
   width: 100%;
 } 
-
- 
+.collection .toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  position: static;
+  background: white;
+  padding: 10px 0;
+  border-bottom: none;
+}
 /* usuwa pseudo-elementy, które często udają linię */
 
 	
