@@ -60,53 +60,22 @@ body {
   display: inline-block;
 }
 
-.nav a {
-  background: #fff;
-}
-/* cienka linia (ukryta) */
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  transform: translateX(-50%);
 
-  width: 0%;
-  height: 1px;
-  background: #111;
-
-  transition: width 0.3s ease;
-}
 
 /* hover */
-.nav a:hover::after {
-  width: 100%;
-}
+
 
   transition: color 0.3s ease;
 }
 
 /* cienka linia (ukryta) */
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 1px;
-  background: #2c2c2c;
+
 
   transition: width 0.3s ease;
 }
 
 /* hover efekt */
-.nav a:hover {
-  color: #000;
-}
 
-.nav a:hover::after {
-  width: 100%;
-}
 
 }
 .collection .toc {
@@ -123,10 +92,7 @@ body {
   margin: 120px auto;
   padding: 0 20px;
 }
-.nav::before,
-.nav::after {
-  display: none !important;
-}
+
 /* =========================
    TYTUŁ
 ========================= */
@@ -138,21 +104,12 @@ body {
   text-align: center;
  
 }
-.nav {
-  border-bottom: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
+
 .poem-title {
   text-align: center;
   margin-bottom: 20px;
 }
-.nav,
-.nav * {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
+
 /* =========================
    SLIDES
 ========================= */
@@ -403,9 +360,7 @@ section {
   background: #333;
   margin: 0 auto 20px;
 }
-.nav {
-  background: #e8dcc7;
-}
+
 	.section {
   opacity: 0.95;
 }
@@ -443,79 +398,64 @@ section {
 .back-to-top-inline:hover {
   color: #000;
 }	
-.nav {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
+
 	.collection .toc {
   position: static;
   border-bottom: none;
 }
-* {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-	.nav {
-  background: #fff !important;
 
-  border: none !important;
-  border-bottom: none !important;
-
-  box-shadow: none !important;
-  outline: none !important;
-
-  background-image: none !important;
-}
-
-/* usuwa pseudo-elementy, które często udają linię */
-.nav::before,
-.nav::after {
-  content: none !important;
-  display: none !important;
-}
-
-	.nav,
-.nav a {
-  text-shadow: none !important;
-  filter: none !important;
-}
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.nav a {
-  text-shadow: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-  -webkit-text-stroke: 0 !important;
-}
-.nav a {
-  font-family: system-ui, Arial, sans-serif;
-}	
 .nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: #fff;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
+  background: #fff;
   padding: 16px 0;
-  box-shadow: none;
+
   border: none;
+  box-shadow: none;
 }
 
 .nav a {
-  margin: 0 12px;
+  margin: 0 14px;
   text-decoration: none;
   color: #111;
+  font-family: system-ui, Arial, sans-serif;
 
-  display: inline-block;
+  position: relative;
 }
+
+/* linia hover */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 1px;
+  background: #111;
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+} 
+
+ 
+/* usuwa pseudo-elementy, które często udają linię */
+
+	
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 	
 </style>
 </head>
