@@ -1,1 +1,16 @@
 Witam 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pierwszy wpis</title>
+</head>
+<body>
+
+  <h1>Pierwszy wpis</h1>
+  <p>To mój pierwszy wpis 🚀</p>
+
+  <a href="../index.html">← Powrót</a>
+
+</body>
+</html>
