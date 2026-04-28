@@ -585,17 +585,17 @@ body.dark .navbar,
 body.dark .menu {
   background: #222;
 }
-.menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  background: white;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  z-index: 9999;
+.menu a {
+  display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  background: rgba(0,0,0,0.05);
+  border-radius: 6px;
 }
 
 /* TO JEST KLUCZ */
