@@ -601,6 +601,22 @@ body.dark .menu {
   border: 1px solid #ddd;
   z-index: 9999;
 }
+@media (min-width: 769px) {
+  #menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 15px;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  #menuToggle {
+    display: none;
+  }
+}
+	
 </style>
 </head>
 
