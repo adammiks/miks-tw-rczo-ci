@@ -2812,189 +2812,66 @@ Bo ziemia to skarb największy.</strong></p></blockquote>    </article>  </secti
 
 
 
-
-
-<!-- SCRIPT -->
-<script>
-function toggleTheme() {
-    const body = document.body;
-
-    if (body.classList.contains("dark")) {
-        body.classList.remove("dark");
-        body.classList.add("light");
-        localStorage.setItem("theme", "light");
-    } else {
-        body.classList.remove("light");
-        body.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-    }
-}
-
-window.onload = function () {
-    const saved = localStorage.getItem("theme");
-    document.body.classList.add(saved ? saved : "light");
-};
-</script>
-
-<script>
-const modal = document.getElementById("galleryModal");
-const modalImg = document.getElementById("modalImg");
-const images = document.querySelectorAll(".gallery img");
-const closeBtn = document.querySelector(".close");
-
-images.forEach(img => {
-  img.onclick = function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-  }
-});
-
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-}
-	</script>
-<!-- ========== STYLE ========== -->
-<style>
-.pair {
-  display: flex;
-  gap: 60px;
-}
-
-.poem-col {
-  width: 50%;
-  line-height: 1.9;
-}
-
-.poem {
-  margin-bottom: 70px;
-}
-
-.poem-col p {
-  white-space: pre-line;
-}
-
-#poem-menu-en {
-  position: fixed;
-  top: 80px;
-  left: 10px;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-</style>
-
-<!-- ========== THEME TOGGLE ========== -->
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("dark");
-  document.body.classList.toggle("light");
-}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <title>Erotyka (18+)</title>
-
-  <!-- jeśli masz własny CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    .age-gate {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      z-index: 9999;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    .age-gate button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-
-<!-- 🔞 AGE GATE -->
-<div id="ageGate" class="age-gate">
-  <h1>🔞 Treści dla dorosłych</h1>
-  <p>Ta sekcja zawiera erotykę (tekst i obrazy).</p>
-  <p>Czy masz ukończone 18 lat?</p>
-
-  <div>
-    <button onclick="enter()">Tak, mam 18+</button>
-    <button onclick="exit()">Nie</button>
-  </div>
-</div>
-
-<!-- 📂 TWOJA TREŚĆ -->
-<div id="content" class="hidden">
-
-  <!-- możesz skopiować styl z index.html -->
-  <header>
-    <h1>Erotyka</h1>
-    <p><a href="index.html">← Powrót do strony głównej</a></p>
-  </header>
-<section>
-  <h2>Erotyka</h2>
-
-<div class="gallery">
-  <a href="https://raw.githubusercontent.com/adammiks/miks-tw-rczo-ci/main/erotyka1.png" target="_blank">
-    <img src="https://raw.githubusercontent.com/adammiks/miks-tw-rczo-ci/main/erotyka1.png" alt="18+">
-	  </a>
-</div>
-
-
- 
-
-
-
-    <a href="img/obraz2.jpg">
-      <img src="img/mini2.jpg" alt="18+">
-    </a>
-  </div>
-
-</section>
-
-  <section>
-    <h2>Opowiadania</h2>
-    <!-- TU teksty -->
-  </section>
-
-</div>
-
-<script>
-function enter() {
-  localStorage.setItem("ageVerified", "true");
-  document.getElementById("ageGate").style.display = "none";
-  document.getElementById("content").classList.remove("hidden");
-} 
-
-function exit() {
-  window.location.href = "index.html";
-}
-
-window.onload = function() {
-  if (localStorage.getItem("ageVerified") === "true") {
-    enter();
-  }
-};
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== THEME ===== */
+  function applyTheme(theme) {
+    document.body.classList.remove("dark", "light");
+    document.body.classList.add(theme);
+  }
+
+  window.toggleTheme = function () {
+    const isDark = document.body.classList.contains("dark");
+    const newTheme = isDark ? "light" : "dark";
+
+    applyTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
+  const savedTheme = localStorage.getItem("theme") || "light";
+  applyTheme(savedTheme);
+
+
+  /* ===== MODAL ===== */
+  const modal = document.getElementById("galleryModal");
+  const modalImg = document.getElementById("modalImg");
+  const images = document.querySelectorAll(".gallery img");
+  const closeBtn = document.querySelector(".close");
+
+  if (modal && modalImg && images.length) {
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+  }
+
+  if (modal && closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+
+  /* ===== AGE GATE ===== */
+  window.enter = function () {
+    localStorage.setItem("ageVerified", "true");
+    document.getElementById("ageGate").style.display = "none";
+    document.getElementById("content").classList.remove("hidden");
+  };
+
+  window.exit = function () {
+    window.location.href = "index.html";
+  };
+
+  if (localStorage.getItem("ageVerified") === "true") {
+    window.enter();
+  }
+
+
+  /* ===== MENU ===== */
   const menu = document.getElementById("menu");
   const toggle = document.getElementById("menuToggle");
   const themeToggle = document.getElementById("themeToggle");
@@ -3008,13 +2885,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (themeToggle) {
     themeToggle.addEventListener("click", (e) => {
       e.preventDefault();
-      document.body.classList.toggle("dark");
+      window.toggleTheme();
     });
   }
+
 });
 </script>
-	
-</script>
+
 
 </body>
 </html>
