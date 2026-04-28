@@ -585,6 +585,37 @@ body.dark .navbar,
 body.dark .menu {
   background: #222;
 }
+	.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  z-index: 999;
+}
+
+.menu.open {
+  display: flex;
+}
+@media (min-width: 769px) {
+  .menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+	
 </style>
 </head>
 
