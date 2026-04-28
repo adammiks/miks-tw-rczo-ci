@@ -480,53 +480,12 @@ footer {
   border: none;
   cursor: pointer;
 }
-
-.menu a {
-  padding: 8px 0;
-  text-decoration: none;
-}
-
-.menu-separator {
-  height: 1px;
-  background: #ddd;
-  margin: 8px 0;
-}
-
-body.dark {
-  background: #111;
-  color: #eee;
-}
-
-body.dark .menu {
-  background: #222;
-}	
-.menu {
+#menu {
   display: none;
 }
 
-.menu.open {
-  display: flex;
-}
-	.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background: white;
-  border-bottom: 1px solid #ddd;
-  position: relative;
-}
-
-.logo {
-  font-weight: bold;
-}
-
-#menu {
-  display: none !important;
-}
-
 #menu.open {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   position: absolute;
   top: 60px;
@@ -535,90 +494,9 @@ body.dark .menu {
   padding: 15px;
   border: 1px solid #ddd;
   z-index: 9999;
-}
-
-
-
-
-
-
-/* DARK MODE */
-body.dark {
-  background: #111;
-  color: #eee;
-}
-
-body.dark .navbar,
-body.dark .menu {
-  background: #222;
-}
-.menu a {
-  display: block;
-  padding: 8px 10px;
-  text-decoration: none;
-  color: inherit;
-  white-space: nowrap;
-}
-
-.menu a:hover {
-  background: rgba(0,0,0,0.05);
-  border-radius: 6px;
-}
-
-/* TO JEST KLUCZ */
-.menu.open {
-  display: flex !important;
-}
-
-@media (min-width: 769px) {
-  .menu {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: transparent;
-    border: none;
-    padding: 0;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-.menu {
   gap: 10px;
 }
-	#menu {
-  display: none !important;
-}
 
-#menu.open {
-  display: flex !important;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  background: white;
-  padding: 15px;
-  border: 1px solid #ddd;
-  z-index: 9999;
-}
-@media (min-width: 769px) {
-  #menu {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    gap: 15px;
-    background: transparent;
-    border: none;
-    padding: 0;
-  }
-
-  #menuToggle {
-    display: none;
-  }
-}
-	
-</style>
-</head>
 
 <body>
 <!-- MENU -->
