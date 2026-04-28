@@ -14,9 +14,8 @@
 <style>
 
 /* =========================
-   GLOBAL RESET
+   RESET
 ========================= */
-
 * {
   box-sizing: border-box;
 }
@@ -27,15 +26,14 @@ body {
   font-size: 14px;
   line-height: 1.8;
   padding-top: 60px;
-  overflow-x: hidden;
   background: white;
   color: black;
+  overflow-x: hidden;
 }
 
 /* =========================
    DARK MODE
 ========================= */
-
 body.dark {
   background: #111;
   color: #eee;
@@ -44,18 +42,19 @@ body.dark {
 /* =========================
    NAVBAR
 ========================= */
-
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: white;
-  border-bottom: 1px solid #ddd;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 20px;
+  background: white;
+  border-bottom: 1px solid #ddd;
   z-index: 1000;
 }
 
@@ -71,7 +70,6 @@ body.dark .navbar {
 /* =========================
    MENU (JEDYNY SYSTEM)
 ========================= */
-
 #menu {
   display: none;
 }
@@ -82,6 +80,7 @@ body.dark .navbar {
   position: absolute;
   top: 60px;
   right: 10px;
+
   background: white;
   padding: 15px;
   border: 1px solid #ddd;
@@ -99,7 +98,6 @@ body.dark #menu {
   text-decoration: none;
   color: inherit;
   padding: 8px 10px;
-  display: block;
 }
 
 #menu a:hover {
@@ -110,7 +108,6 @@ body.dark #menu {
 /* =========================
    DESKTOP MENU
 ========================= */
-
 @media (min-width: 769px) {
   #menu {
     display: flex !important;
@@ -129,7 +126,11 @@ body.dark #menu {
 
 </style>
 </head>
+
 <body>
+
+<!-- ================= NAVBAR ================= -->
+
 
 
   <button class="menu-toggle" id="menuToggle">☰</button>
