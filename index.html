@@ -108,17 +108,20 @@ body.dark #menu {
 /* =========================
    DESKTOP MENU
 ========================= */
-@media (min-width: 769px) {
-  #menu {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    gap: 15px;
-    background: transparent;
-    border: none;
-    padding: 0;
-  }
 
+
+#menu.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  z-index: 9999;
+  gap: 10px;
+}
   #menuToggle {
     display: none;
   }
@@ -135,7 +138,7 @@ body.dark #menu {
 
   <button class="menu-toggle" id="menuToggle">☰</button>
 
-  <div class="menu" id="menu">
+  <div  id="menu">
 	<a href="#o-mnie">O mnie</a>
   <a href="#kontakt">Kontakt</a>
   <a href="#wydany">Z krajobrazów poety</a>
