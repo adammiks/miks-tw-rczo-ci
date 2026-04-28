@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Miks twórczości Adama</title>
-
-<meta name="description" content="Strona Adama Miks – poezja, wiersze i galeria.">
-
-<link rel="icon" href="favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
 <style>
 
 /* =========================
@@ -70,10 +57,13 @@ body.dark .navbar {
 /* =========================
    MENU (JEDYNY SYSTEM)
 ========================= */
+
+/* ukryte domyślnie */
 #menu {
   display: none;
 }
 
+/* OPEN STATE */
 #menu.open {
   display: flex;
   flex-direction: column;
@@ -88,16 +78,18 @@ body.dark .navbar {
   gap: 10px;
 }
 
+/* dark mode menu */
 body.dark #menu {
   background: #222;
   border-color: #333;
 }
 
-/* LINKI */
+/* linki */
 #menu a {
   text-decoration: none;
   color: inherit;
   padding: 8px 10px;
+  display: block;
 }
 
 #menu a:hover {
@@ -106,31 +98,26 @@ body.dark #menu {
 }
 
 /* =========================
-   DESKTOP MENU
+   DESKTOP MENU FIX
 ========================= */
+@media (min-width: 769px) {
 
+  #menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 15px;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
 
-#menu.open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  background: white;
-  padding: 15px;
-  border: 1px solid #ddd;
-  z-index: 9999;
-  gap: 10px;
-}
   #menuToggle {
     display: none;
   }
 }
 
 </style>
-</head>
-
-<body>
 
 <!-- ================= NAVBAR ================= -->
 
