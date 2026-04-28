@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl"> 
+<html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,12 @@
 <style>
 
 /* =========================
-   GLOBAL
+   GLOBAL RESET
 ========================= */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -24,462 +28,50 @@ body {
   line-height: 1.8;
   padding-top: 60px;
   overflow-x: hidden;
-}
-
-/* =========================
-   NAWIGACJA
-========================= */
-/* ===== MENU – styl książkowy ===== */
-
-/* ===== MENU – minimalistyczne, książkowe ===== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================
-   SEKCJE
-========================= */
-
-.section {
-  max-width: 650px;
-  margin: 120px auto;
-  padding: 0 20px;
-}
-
-/* =========================
-   TYTUŁ
-========================= */
-
-.title-panel {
-  max-width: 800px;
-  margin: 90px auto 20px;
-  padding: 25px;
-  text-align: center;
- 
-}
-
-.poem-title {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* =========================
-   SLIDES
-========================= */
-
-.slide {
-  display: none;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 120px 40px 40px;
-  box-sizing: border-box;
-}
-
-.slide:first-of-type {
-  display: block;
-}
-
-.slide:target {
-  display: block;
-}
-
-/* =========================
-   DWUKOLUMNOWY UKŁAD (GLOBALNY)
-========================= */
-
-.pair {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.poem-col {
-  flex: 1;
-  min-width: 0;
-}
-
-/* separator */
-.poem-col:first-child {
-  border-right: 1px solid #999;
-  padding-right: 40px;
-}
-
-.poem-col:last-child {
-  padding-left: 40px;
-}
-
-/* =========================
-   TŁUMACZENIA (TYLKO TA SEKCJA!)
-========================= */
-
-#translations-en {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* tylko tutaj zmieniamy wygląd kolumn */
-#translations-en .pair {
-  justify-content: center;
-  gap: 80px;
-}
-
-#translations-en .poem-col {
-  flex: 0 1 450px;
-  max-width: 450px;
-}
-
-/* 🔥 USUNIĘTY CHAOS:
-.translations { display:flex }  → NIE POTRZEBNE
-*/
-
-/* =========================
-   TEKST
-========================= */
-
-.slide p {
-  line-height: 1.9;
-  margin-bottom: 50px;
-}
-
-/* =========================
-   MENU / FORM
-========================= */
-
-#poem-menu button {
-  width: 100%;
-  margin-bottom: 3px;
-  padding: 3px 5px;
-  font-size: 9px;
-}
-
-input, textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-button {
-  padding: 10px;
-  cursor: pointer;
-}
-
-/* =========================
-   SPIS TREŚCI
-========================= */
-
-.collection {
-  margin-bottom: 80px;
-  padding-top: 20px;
-}
-
-.collection .toc {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 15px;
-  position: sticky;
-  top: 0;
   background: white;
-  padding: 10px 0;
-  z-index: 10;
-  border-bottom: 1px solid #eee;
-}
-
-.collection .toc a {
-  padding: 6px 12px;
-  border: 1px solid #333;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 13px;
   color: black;
 }
 
-.collection .toc a:hover {
-  background: black;
-  color: white;
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+  background: #111;
+  color: #eee;
 }
 
 /* =========================
-   SCROLL + DEKORACJE
+   NAVBAR
 ========================= */
 
-html {
-  scroll-behavior: smooth;
-}
-
-section {
-  scroll-margin-top: 80px;
-}
-
-.section-divider {
-  margin: 140px 0;
+.navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  opacity: 0.35;
-}
-
-.ink-line {
-  height: 1px;
-  width: 80px;
-  background: linear-gradient(to right, transparent, #444, transparent);
-}
-
-.ink-pen {
-  font-size: 18px;
-  transform: rotate(-15deg);
-  opacity: 0.7;
-}
-
-/* =========================
-   AFTERWORD
-========================= */
-
-.afterword p {
-  text-align: justify;
-  text-indent: 1.5em;
-  margin-bottom: 0;
-}
-
-.title-page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title-page h1 {
-  font-size: 3rem;
-  margin-bottom: 40px;
-}
-
-.title-page .author {
-  font-size: 1.5rem;
-  margin-bottom: 60px;
-}	
-
-.title-panel {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0;
-}
-.title-panel h1 {
-  font-size: 3.2rem;
-  letter-spacing: 2px;
-}
-
-.title-panel p {
-  margin: 10px 0;
-}
-
-#wydany {
-  margin: 200px 0;
-  text-align: center;
-  opacity: 0.85;
-}	
-
-.page-break {
-  height: 120vh;
-}
-
-
-.collection {
-  text-align: center;
-}	
-
-.title-panel {
-  margin: 160px auto 120px;
-  padding: 80px 40px;
-}	
-.section h2 {
-  text-align: center;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
-}
-	
-.section h2::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 1px;
-  background: #333;
-  margin: 0 auto 20px;
-}
-
-	.section {
-  opacity: 0.95;
-}
-.slide p {
-  white-space: pre-wrap;
-}
-	#scrollTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-#scrollTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.back-to-top-inline {
-  margin-left: 10px;
-  font-size: 0.8em;
-  text-decoration: none;
-  color: #888;
-}
-
-.back-to-top-inline:hover {
-  color: #000;
-}	
-
-	.collection .toc {
-  position: static;
-  border-bottom: none;
-}
-
-.nav {
+  padding: 15px 20px;
+  background: white;
+  border-bottom: 1px solid #ddd;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: #fff;
-  padding: 16px 0;
-
-  border: none;
-  box-shadow: none;
+  z-index: 1000;
 }
 
-.nav a {
-  margin: 0 14px;
-  text-decoration: none;
-  color: #111;
-  font-family: system-ui, Arial, sans-serif;
-
-  position: relative;
+body.dark .navbar {
+  background: #222;
+  border-color: #333;
 }
 
-/* linia hover */
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  transform: translateX(-50%);
-  width: 0%;
-  height: 1px;
-  background: #111;
-  transition: width 0.25s ease;
+.logo {
+  font-weight: bold;
 }
 
-.nav a:hover::after {
-  width: 100%;
-} 
-.collection .toc {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 15px;
-  position: static;
-  background: white;
-  padding: 10px 0;
-  border-bottom: none;
-}
-/* usuwa pseudo-elementy, które często udają linię */
+/* =========================
+   MENU (JEDYNY SYSTEM)
+========================= */
 
-	
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-footer {
-  border-top: 2px solid #ddd;
-  margin-top: 50px;
-  padding-top: 30px;
-}	
-
-#proza1 li {
-    list-style-position: outside;
-    padding-left: 0;
-}
-
-#proza1 li a {
-    display: inline;      /* kluczowe */
-    margin: 0;
-    padding: 0;
-}	
-#proza1 li,
-#proza1 li a {
-    all: unset;
-}
-#proza1 li {
-    display: list-item;
-}
-
-#proza1 li a {
-    color: black;
-    text-decoration: none;
-}
-.justify {
-  text-align: justify;
-}
-	.menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-.menu.open {
-  display: flex;
-}
-
-.menu-toggle {
-  font-size: 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 #menu {
   display: none;
 }
@@ -497,11 +89,48 @@ footer {
   gap: 10px;
 }
 
+body.dark #menu {
+  background: #222;
+  border-color: #333;
+}
+
+/* LINKI */
+#menu a {
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 10px;
+  display: block;
+}
+
+#menu a:hover {
+  background: rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+/* =========================
+   DESKTOP MENU
+========================= */
+
+@media (min-width: 769px) {
+  #menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 15px;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  #menuToggle {
+    display: none;
+  }
+}
+
 </style>
+</head>
 <body>
-<!-- MENU -->
-<nav class="navbar">
-  <div class="logo">Twoje Logo</div>
+
 
   <button class="menu-toggle" id="menuToggle">☰</button>
 
