@@ -464,8 +464,13 @@ footer {
 
 <body>
 <!-- MENU -->
-<div class="nav">
-  <a href="#o-mnie">O mnie</a>
+<nav class="navbar">
+  <div class="logo">Twoje Logo</div>
+
+  <button class="menu-toggle" id="menuToggle">☰</button>
+
+  <div class="menu" id="menu">
+	<a href="#o-mnie">O mnie</a>
   <a href="#kontakt">Kontakt</a>
   <a href="#wydany">Z krajobrazów poety</a>
  <a href="#tomik-1">Ze stadionów świata</a>
@@ -474,12 +479,21 @@ footer {
    <a href="#opowiadania">Opowiadania</a>
 	 <a href="#ksiazki">Ulubione książki</a>
   <a href="#portfolio">Portfolio</a>
-	<a href="erotyka.html">Erotyka (18+)</a>
+	<a href="erotyka.html">Erotyka (18+)</a>  
+   
 
-</div>
+    <div class="menu-separator"></div>
 
+    <a href="#" id="themeToggle">🌙 / ☀️</a>
 
-<button onclick="toggleTheme()">🌙 / ☀️</button>
+    <div class="menu-separator"></div>
+
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </div>
+</nav>
+	
+
 
 
 <div class="title-panel">
