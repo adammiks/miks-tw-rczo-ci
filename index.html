@@ -585,7 +585,7 @@ body.dark .navbar,
 body.dark .menu {
   background: #222;
 }
-	.menu {
+.menu {
   display: none;
   flex-direction: column;
   position: absolute;
@@ -595,12 +595,14 @@ body.dark .menu {
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  z-index: 999;
+  z-index: 9999;
 }
 
+/* TO JEST KLUCZ */
 .menu.open {
-  display: flex;
+  display: flex !important;
 }
+
 @media (min-width: 769px) {
   .menu {
     display: flex !important;
