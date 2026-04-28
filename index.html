@@ -3109,22 +3109,26 @@ themeToggle.addEventListener("click", () => {
 
 <!-- treść strony -->
 
-<section id="newsletter">
-  <h2>Newsletter</h2>
-  <p>Przeczytałeś? Podoba się ... Zapisz się!</p>
-
-
-
-
-
- 
 <script>
-const menu = document.getElementById("menu");
-const toggle = document.getElementById("menuToggle");
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.getElementById("menu");
+  const toggle = document.getElementById("menuToggle");
+  const themeToggle = document.getElementById("themeToggle");
 
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("open");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.body.classList.toggle("dark");
+    });
+  }
 });
+</script>
 </script>
 </body>
 </html>
