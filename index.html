@@ -3075,22 +3075,34 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-
+<script>
 const themeToggle = document.getElementById("themeToggle");
 
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });	
-
+</script>
 <!-- ========== FOOTER ========== -->
-<footer class="site-footer">
-  <div class="footer-content">
-    <p class="copyright">
-      &copy; 2026 Adam Miks
-    </p>
 
-    <p class="editorial">
-      Redakcja i autor: Adam Miks
+	
+	<section id="newsletter">
+  <h2>Newsletter</h2>
+  <p>Przeczytałeś? Podoba się ... Zapisz się!</p>
+
+  <form action="https://formspree.io/f/TWOJ_ID" method="POST">
+    <input type="email" name="email" placeholder="Twój email" required>
+    <button type="submit">Zapisz się</button>
+  </form>
+</section>
+	
+	
+	<footer class="site-footer">
+  <p>© 2026 Adam Miks</p>
+
+  <a href="#">Kontakt</a>
+  <a href="#">Polityka prywatności</a>
+</footer>
+
 
 		
     </p>
@@ -3101,15 +3113,9 @@ themeToggle.addEventListener("click", () => {
   <h2>Newsletter</h2>
   <p>Przeczytałeś? Podoba się ... Zapisz się!</p>
 
-  <form action="https://formspree.io/f/TWOJ_ID" method="POST">
-    <input type="email" name="email" placeholder="Twój email" required>
-    <button type="submit">Zapisz się</button>
-  </form>
-</section>
 
-<footer>
-  <p>© Twoja strona</p>
-</footer>
+
+
 
     <div class="footer-links">
       <a href="#">Kontakt</a>
