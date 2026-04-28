@@ -9,36 +9,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  margin: 0;
   font-family: 'Playfair Display', serif;
   font-size: 14px;
   line-height: 1.8;
+  padding-top: 60px;
   background: #fff;
   color: #111;
-  padding-top: 60px;
 }
 
-/* =========================
-   DARK MODE
-========================= */
 body.dark {
   background: #111;
   color: #eee;
 }
+</style>
 
-/* =========================
-   NAVBAR
-========================= */
+</head>
+<body>
+
+<nav class="navbar">
+
+  <div class="logo">Miks</div>
+
+  <button id="menuToggle">☰</button>
+
+  <div id="menu">
+
+    <a href="#o-mnie">O mnie</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="erotyka.html">Erotyka</a>
+
+    <a href="#" id="themeToggle">🌙 / ☀️</a>
+
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+
+  </div>
+
+</nav>
+<style>
 .navbar {
   position: fixed;
   top: 0;
@@ -61,13 +72,6 @@ body.dark .navbar {
   border-color: #333;
 }
 
-.logo {
-  font-weight: bold;
-}
-
-/* =========================
-   MENU MOBILE
-========================= */
 #menu {
   display: none;
   flex-direction: column;
@@ -91,91 +95,33 @@ body.dark #menu {
   display: flex;
 }
 
-/* LINKS */
 #menu a {
   text-decoration: none;
   color: inherit;
   padding: 6px 10px;
-  border-radius: 6px;
 }
 
 #menu a:hover {
   background: rgba(0,0,0,0.06);
+  border-radius: 6px;
 }
 
-/* =========================
-   DESKTOP
-========================= */
-@media (min-width: 769px) {
-
+@media (min-width: 768px) {
   #menu {
     display: flex !important;
     position: static;
     flex-direction: row;
-    gap: 16px;
     background: transparent;
     border: none;
     padding: 0;
+    gap: 16px;
   }
 
   #menuToggle {
     display: none;
   }
 }
-
 </style>
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-
-  <div class="logo">Miks</div>
-
-  <button id="menuToggle">☰</button>
-
-  <div id="menu">
-
-    <a href="#o-mnie">O mnie</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="erotyka.html">Erotyka</a>
-
-    <a href="#" id="themeToggle">🌙 / ☀️</a>
-
-    <a href="https://facebook.com" target="_blank">Facebook</a>
-    <a href="https://instagram.com" target="_blank">Instagram</a>
-
-  </div>
-
-</nav>
-
-<!-- JS -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const menu = document.getElementById("menu");
-  const toggle = document.getElementById("menuToggle");
-  const themeToggle = document.getElementById("themeToggle");
-
-  // MENU
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("open");
-    });
-  }
-
-  // DARK MODE
-  if (themeToggle) {
-    themeToggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.body.classList.toggle("dark");
-    });
-  }
-
-});
-</script>
 
 
 
