@@ -1,6 +1,7 @@
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
 <html lang="pl">
-<head> 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,42 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  line-height: 1.8;
-  padding-top: 60px;
-  background: #fff;
-  color: #111;
-}
-
-body.dark {
-  background: #111;
-  color: #eee;
-}
-	.slide {
-  flex-direction: column;
-}
-</style>
-
-</head>
-<body>
-
-<nav class="navbar">
-
-
-
-    <a href="#" id="themeToggle">🌙 / ☀️</a>
-
-    <a href="https://facebook.com" target="_blank">Facebook</a>
-    <a href="https://instagram.com" target="_blank">Instagram</a>
-
-  </div>
-
-</nav>
-<style>
-/* RESET / GLOBAL */
 * {
   box-sizing: border-box;
 }
@@ -57,8 +22,8 @@ body {
   padding-top: 60px;
   background: #fff;
   color: #111;
-  overflow-x: hidden;
   text-align: center;
+  overflow-x: hidden;
 }
 
 body.dark {
@@ -81,117 +46,73 @@ body.dark {
   padding: 0 20px;
   background: #222;
   color: white;
-  border-bottom: 1px solid #ddd;
   z-index: 1000;
 }
 
-body.dark .navbar {
-  background: #222;
-  border-color: #333;
-}
-
-/* MENU */
-#menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 10px;
-
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 15px;
-  gap: 10px;
-  z-index: 9999;
-}
-
-body.dark #menu {
-  background: #222;
-  border-color: #333;
-}
-
-#menu.open {
-  display: flex;
-}
-
-#menu a {
+.navbar a {
+  color: white;
   text-decoration: none;
-  color: inherit;
-  padding: 6px 10px;
-}
-
-#menu a:hover {
-  background: rgba(0,0,0,0.06);
-  border-radius: 6px;
-}
-
-/* DESKTOP MENU */
-@media (min-width: 768px) {
-  #menu {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: transparent;
-    border: none;
-    padding: 0;
-    gap: 16px;
-  }
-
-  #menuToggle {
-    display: none;
-  }
+  margin-left: 15px;
 }
 
 /* HAMBURGER */
 .hamburger {
-  display: none;
   font-size: 28px;
   cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-}
-
-/* SEKCJE / SLIDES */
-.slide {
   display: block;
-  padding: 80px 20px;
-  margin-bottom: 80px; /* 🔥 odstęp między sekcjami */
 }
 
-/* TEKST */
-.slide p {
-  white-space: pre-wrap;
+/* MENU */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
 }
 
+.menu.open {
+  display: flex;
+}
+
+body.dark .menu {
+  background: #222;
+  border-color: #333;
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* SEKCJE */
+.slide {
+  padding: 100px 20px;
+  margin-bottom: 120px;
+}
+
+/* POEZJA */
 .poem {
   white-space: pre-wrap;
-  max-width: 500px;
+  max-width: 600px;
   font-size: 22px;
+  margin: 0 auto;
   line-height: 1.6;
 }
 
-.justify,
-.justified {
+.justify {
   text-align: justify;
 }
-	.section {
-  padding: 60px 0;
-  margin-bottom: 80px;
-}
 
-.kontakt {
-  margin-bottom: 60px; /* zwiększa odstęp pod kontaktem */
-}
-
-.krajobrazy {
-  margin-top: 60px; /* zwiększa odstęp nad kolejną sekcją */
-}	
-	#kontakt {
+/* LEPSZE ODSTĘPY */
+#kontakt {
   margin-bottom: 120px;
 }
 
@@ -199,52 +120,76 @@ body.dark #menu {
   margin-top: 120px;
 }
 </style>
-
-
-<title>Menu hamburger</title>
-<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
   <div class="logo">MIKS TWÓRCZOŚCI ADAMA</div>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    ☰
-  </div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 
   <ul class="menu" id="menu">
     <li><a href="#o-mnie">O mnie</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
-    <li><a href="#wydany">Z krajobrazów poety</a></li>
-    <li><a href="#tomik-1">Ze stadionów świata</a></li>
-    <li><a href="#tomik-2">Dzień dobry, do widzenia i spacery między</a></li>
-	<li><a href="#tomik-3">Z róznych półek</a></li>
-	  <li><a href="#opowiadania">Latarnik i inne opowiadania</a></li>
-	  <li><a href="#ksiązki">Ulubione książki</a></li>
-	    <li><a href="portfolio">Portfolio</a></li>
-	 </ul>
+    <li><a href="#krajobrazy">Z krajobrazów poety</a></li>
+    <li><a href="#opowiadania">Opowiadania</a></li>
+    <li><a href="#ksiazki">Ulubione książki</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#" id="themeToggle">🌙 / ☀️</a></li>
+    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+  </ul>
 </div>
 
-<script src="script.js"></script>
-</body>
-</html>
+<!-- SEKCJE -->
+<section id="o-mnie" class="slide">
+  <h2>O mnie</h2>
+  <p>Treść o mnie...</p>
+</section>
 
+<section id="kontakt" class="slide">
+  <h2>Kontakt</h2>
+  <p>Email / informacje</p>
+</section>
 
-  
-   
-
-    <div class="menu-separator"></div>
-
-    <a href="#" id="themeToggle">🌙 / ☀️</a>
-
-    <div class="menu-separator"></div>
-
-    <a href="https://facebook.com" target="_blank">Facebook</a>
-    <a href="https://instagram.com" target="_blank">Instagram</a>
+<section id="krajobrazy" class="slide">
+  <h2>Z krajobrazów poety</h2>
+  <div class="poem justify">
+    Treść poezji...
   </div>
-</nav>
-	
+</section>
+
+<section id="opowiadania" class="slide">
+  <h2>Opowiadania</h2>
+  <p>Treść opowiadań...</p>
+</section>
+
+<section id="ksiazki" class="slide">
+  <h2>Ulubione książki</h2>
+  <p>Lista książek...</p>
+</section>
+
+<section id="portfolio" class="slide">
+  <h2>Portfolio</h2>
+  <p>Twoje prace...</p>
+</section>
+
+<!-- JS -->
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("open");
+}
+
+document.getElementById("themeToggle").addEventListener("click", function(e) {
+  e.preventDefault();
+  document.body.classList.toggle("dark");
+});
+</script>
+
+</body>
+</html>	
 
 
 
