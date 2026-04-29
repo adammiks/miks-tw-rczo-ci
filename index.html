@@ -70,6 +70,68 @@ body.dark {
   left: 0;
   width: 100%;
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 15px 20px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* 📱 wersja mobilna */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+}
+	
 * {
   box-sizing: border-box;
 }
