@@ -1,5 +1,5 @@
 Witaj,
-oto nowa strona, strona Adama Miksa, twórczy internetowego, poety, prozaika, blogera cyfrowego - ## 🚀 Demo
+oto nowa strona, strona Adama Miksa, twórczy internetowego, poety, prozaika, blogera cyfrowego - 
 
 <p align="center">
   <a href="https://adammiks.github.io/stronaadama">
