@@ -2121,81 +2121,67 @@ Podaje mi, nie wiadomo skąd, księgę oprawioną w płótno. Z obojętnym błog
 
 
 </section>
-
-		
-		
-		<section id="newsletter">
-  <h2>Newsletter</h2>
-  <p>Przeczytałeś? Podoba się? Zapisz się!</p>
-
-  <form action="https://formspree.io/f/TWOJ_ID" method="POST">
-    <input type="email" name="email" placeholder="Twój email" required>
-    <button type="submit">Zapisz się</button>
-  </form>
-</section>
-		
-
-	<script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("open");
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.getElementById("themeToggle");
-
-      btn.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.body.classList.toggle("dark");
-      });
-    });
-  </script>
-
-</body>
-</html>
-
-
-
-
-
-
-<!-- Modal -->
-
-
-
-
-
-
-
-
-<script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===== THEME ===== */
+  /* =========================
+     🌙 THEME (dark/light)
+  ========================= */
+
   function applyTheme(theme) {
     document.body.classList.remove("dark", "light");
     document.body.classList.add(theme);
   }
 
-  window.toggleTheme = function () {
+  function toggleTheme() {
     const isDark = document.body.classList.contains("dark");
     const newTheme = isDark ? "light" : "dark";
 
     applyTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-  };
+  }
 
   const savedTheme = localStorage.getItem("theme") || "light";
   applyTheme(savedTheme);
 
 
-  /* ===== MODAL ===== */
+  /* =========================
+     📱 MENU
+  ========================= */
+
+  const menu = document.getElementById("menu");
+  const menuToggle = document.getElementById("menuToggle");
+
+  if (menu && menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+  }
+
+
+  /* =========================
+     🌙 BUTTON - THEME TOGGLE
+  ========================= */
+
+  const themeToggle = document.getElementById("themeToggle");
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleTheme();
+    });
+  }
+
+
+  /* =========================
+     🖼️ GALLERY MODAL
+  ========================= */
+
   const modal = document.getElementById("galleryModal");
   const modalImg = document.getElementById("modalImg");
   const images = document.querySelectorAll(".gallery img");
-  const closeBtn = document.querySelector(".close"); 
+  const closeBtn = document.querySelector(".close");
 
-  if (modal && modalImg && images.length) {
+  if (modal && modalImg) {
     images.forEach(img => {
       img.addEventListener("click", () => {
         modal.style.display = "block";
@@ -2204,85 +2190,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (modal && closeBtn) {
+  if (closeBtn && modal) {
     closeBtn.addEventListener("click", () => {
       modal.style.display = "none";
     });
   }
 
 
-  /* ===== AGE GATE ===== */
-  window.enter = function () {
-    localStorage.setItem("ageVerified", "true");
-    document.getElementById("ageGate").style.display = "none";
-    document.getElementById("content").classList.remove("hidden");
-  };
+  /* =========================
+     🔞 AGE GATE
+  ========================= */
 
-  window.exit = function () {
+  function enterSite() {
+    localStorage.setItem("ageVerified", "true");
+
+    const gate = document.getElementById("ageGate");
+    const content = document.getElementById("content");
+
+    if (gate) gate.style.display = "none";
+    if (content) content.classList.remove("hidden");
+  }
+
+  function exitSite() {
     window.location.href = "index.html";
-  };
+  }
+
+  window.enter = enterSite;
+  window.exit = exitSite;
 
   if (localStorage.getItem("ageVerified") === "true") {
-    window.enter();
-  }
-
-
-  /* ===== MENU ===== */
-  const menu = document.getElementById("menu");
-  const toggle = document.getElementById("menuToggle");
-  const themeToggle = document.getElementById("themeToggle");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("open");
-    });
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.toggleTheme();
-    });
+    enterSite();
   }
 
 });
-</script>
-document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.getElementById("menu");
-  const toggle = document.getElementById("menuToggle");
-  const themeToggle = document.getElementById("themeToggle");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("open");
-    });
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.body.classList.toggle("dark");
-    });
-  }
-});
-</script>
-
-	function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("active");
-}
-
-</body>
-</html>
-	
-</script>
-
-<!-- ========== PORTFOLIO ========== -->
-
-
-<!-- ========== SLIDES (WIERSZE) ========== -->
-
-
-
-
-  
+		
+		
+		
