@@ -1,23 +1,9 @@
-# 👋 Cześć!
+Witaj,
+oto nowa strona, strona Adama Miksa, twórczy internetowego, poety, prozaika, blogera cyfrowego - ## 🚀 Demo
 
-To moja strona internetowa:
+<p align="center">
+  <a href="https://adammiks.github.io/stronaadama">
+    <img src="https://img.shields.io/badge/Otwórz%20stronę-kliknij%20tutaj-brightgreen?style=for-the-badge" />
+  </a>
+</p>
 
-🌐 https://adammiks.github.io/miks-tw-rczo-ci
-
----
-
-## 📌 O stronie
-To prosta strona stworzona w HTML i hostowana przez GitHub Pages.
-
----
-
-## 🚀 Link do strony
-👉 Kliknij tutaj:  
-https://adammiks.github.io/miks-tw-rczo-ci
-
----
-
-## 📫 Kontakt
-Możesz dodać tutaj swoje social media lub e-mail:
-- Instagram: (tu wpisz)
-- Facebook: (tu wpisz)
